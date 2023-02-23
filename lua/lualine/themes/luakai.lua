@@ -2,43 +2,44 @@ local C = require("luakai.palettes").get_palette()
 local O = require("luakai").options
 local luakai = {}
 
-local transparent_bg = O.transparent_background and "NONE" or C.mantle
+local transparent_bg = O.transparent_background and "NONE" or C.bg
 
-luakai.normal = {
-    a = { bg = C.blue, fg = C.mantle, gui = "bold" },
-    b = { bg = C.surface1, fg = C.blue },
-    c = { bg = transparent_bg, fg = C.text },
-}
-
-luakai.insert = {
-    a = { bg = C.green, fg = C.base, gui = "bold" },
-    b = { bg = C.surface1, fg = C.teal },
-}
-
-luakai.terminal = {
-    a = { bg = C.green, fg = C.base, gui = "bold" },
-    b = { bg = C.surface1, fg = C.teal },
-}
-
-luakai.command = {
-    a = { bg = C.peach, fg = C.base, gui = "bold" },
-    b = { bg = C.surface1, fg = C.peach },
-}
-
-luakai.visual = {
-    a = { bg = C.mauve, fg = C.base, gui = "bold" },
-    b = { bg = C.surface1, fg = C.mauve },
-}
-
-luakai.replace = {
-    a = { bg = C.red, fg = C.base, gui = "bold" },
-    b = { bg = C.surface1, fg = C.red },
-}
-
-luakai.inactive = {
-    a = { bg = transparent_bg, fg = C.blue },
-    b = { bg = transparent_bg, fg = C.surface1, gui = "bold" },
-    c = { bg = transparent_bg, fg = C.overlay0 },
+local luakai = {
+  normal = {
+    a = {bg = C.bg_blue[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg4[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  insert = {
+    a = {bg = C.bg_green[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg4[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  visual = {
+    a = {bg = C.bg_red[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg4[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  replace = {
+    a = {bg = C.orange[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg4[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  command = {
+    a = {bg = C.yellow[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg4[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  terminal = {
+    a = {bg = C.purple[1], fg = C.bg0[1], gui = 'bold'},
+    b = {bg = C.bg3[1], fg = C.fg[1]},
+    c = {bg = C.bg1[1], fg = C.fg[1]}
+  },
+  inactive = {
+    a = {bg = C.bg1[1], fg = C.grey[1]},
+    b = {bg = C.bg1[1], fg = C.grey[1]},
+    c = {bg = C.bg1[1], fg = C.grey[1]}
+  }
 }
 
 return luakai

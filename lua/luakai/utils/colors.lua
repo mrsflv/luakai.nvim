@@ -8,6 +8,14 @@ M.day_brightness = 0.3
 
 ---@param hex_str string hexadecimal value of a color
 local hex_to_rgb = function(hex_str)
+    -- WARN: DEBUG
+    if not hex_str then
+        return {0, 0, 0}
+    end
+    if type(hex_str) == "table" then
+        hex_str = hex_str[1]
+    end
+
     local hex = "[abcdef0-9][abcdef0-9]"
     local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
     hex_str = string.lower(hex_str)

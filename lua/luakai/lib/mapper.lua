@@ -40,12 +40,12 @@ function M.apply(flavour)
     local dim_percentage = O.dim_inactive.percentage
     C.dim = O.dim_inactive.shade == "dark"
         and U.vary_color(
-            { latte = U.darken(C.base, dim_percentage, C.mantle) },
-            U.darken(C.base, dim_percentage, C.mantle)
+            { shusia = U.darken(C.bg, dim_percentage, C.bg4) },
+            U.darken(C.bg, dim_percentage, C.bg4)
         )
         or U.vary_color(
-            { latte = U.lighten("#FBFCFD", dim_percentage, C.base) },
-            U.lighten(C.surface0, dim_percentage, C.base)
+            { shusia = U.lighten("#FBFCFD", dim_percentage, C.bg) },
+            U.lighten(C.bg0, dim_percentage, C.bg)
         )
 
     local theme = {}

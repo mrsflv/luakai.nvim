@@ -4,10 +4,10 @@ if is_vim then require "luakai.lib.vim" end
 local M = {
     options = {
         background = {
-            light = "latte",
-            dark = "mocha",
+            light = "maia",
+            dark = "maia",
         },
-        compile_path = vim.fn.stdpath "cache" .. "/luakai",
+        compile_path = os.getenv("HOME") .. "/projects/luakai.nvim/cache/",
         transparent_background = false,
         show_end_of_buffer = false,
         term_colors = false,
@@ -68,7 +68,7 @@ local M = {
         color_overrides = {},
         highlight_overrides = {},
     },
-    flavours = { latte = 1, frappe = 2, macchiato = 3, mocha = 4 },
+    flavours = { atlantis = 1,  andromeda = 2, shusia = 3, maia = 4, espresso = 5, default = 6 },
     path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
@@ -94,7 +94,7 @@ local function get_flavour(default)
     if flavour and not M.flavours[flavour] then
         vim.notify(
             string.format(
-                "Luakai (error): Invalid flavour '%s', flavour must be 'latte', 'frappe', 'macchiato' or 'mocha'",
+                "Luakai (error): Invalid flavour '%s', flavour must be 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso', or 'default'",
                 flavour
             ),
             vim.log.levels.ERROR

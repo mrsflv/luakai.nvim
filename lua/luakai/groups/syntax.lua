@@ -2,22 +2,22 @@ local M = {}
 
 function M.get()
     return {
-        Comment = { fg = C.surface2, style = O.styles.comments }, -- just comments
+        Comment = { fg = C.grey, style = O.styles.comments }, -- just comments
         SpecialComment = { link = "Special" }, -- special things inside a comment
-        Constant = { fg = C.peach }, -- (preferred) any constant
-        String = { fg = C.green, style = O.styles.strings or {} }, -- a string constant: "this is a string"
+        Constant = { fg = C.orange }, -- (preferred) any constant
+        String = { fg = C.yellow, style = O.styles.strings or {} }, -- a string constant: "this is a string"
         Character = { fg = C.teal }, --  a character constant: 'c', '\n'
-        Number = { fg = C.peach, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
-        Float = { fg = C.peach, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
-        Boolean = { fg = C.peach, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
-        Identifier = { fg = C.flamingo, style = O.styles.variables or {} }, -- (preferred) any variable name
-        Function = { fg = C.blue, style = O.styles.functions or {} }, -- function name (also: methods for classes)
-        Statement = { fg = C.mauve }, -- (preferred) any statement
-        Conditional = { fg = C.mauve, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
-        Repeat = { fg = C.mauve, style = O.styles.loops or {} }, --   for, do, while, etC.
-        Label = { fg = C.sapphire }, --    case, default, etC.
-        Operator = { fg = C.sky, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etC.
-        Keyword = { fg = C.mauve, style = O.styles.keywords or {} }, --  any other keyword
+        Number = { fg = C.purple, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
+        Float = { fg = C.purple, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
+        Boolean = { fg = C.purple, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
+        Identifier = { fg = C.yellow, style = O.styles.variables or {} }, -- (preferred) any variable name
+        Function = { fg = C.green, style = O.styles.functions or {} }, -- function name (also: methods for classes)
+        Statement = { fg = C.red }, -- (preferred) any statement
+        Conditional = { fg = C.red, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
+        Repeat = { fg = C.red, style = O.styles.loops or {} }, --   for, do, while, etC.
+        Label = { fg = C.red }, --    case, default, etC.
+        Operator = { fg = C.red, style = O.styles.operators or {} }, -- "sizeof", "+", "*", etC.
+        Keyword = { fg = C.red, style = O.styles.keywords or {} }, --  any other keyword
         -- Exception     = { }, --  try, catch, throw
 
         PreProc = { fg = C.pink }, -- (preferred) generic Preprocessor
