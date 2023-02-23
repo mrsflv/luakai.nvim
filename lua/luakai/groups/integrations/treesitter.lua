@@ -118,7 +118,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         -- css
         ["@property.css"] = { fg = C.lavender },
         ["@property.id.css"] = { fg = C.blue },
-        ["@property.class.css"] = { fg = C.yellow },
+        ["@property.class.css"] = { fg = C.orange },
         ["@type.css"] = { fg = C.lavender },
         ["@type.tag.css"] = { fg = C.mauve },
         ["@string.plain.css"] = { fg = C.peach },

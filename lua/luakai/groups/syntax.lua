@@ -10,7 +10,7 @@ function M.get()
         Number = { fg = C.purple, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
         Float = { fg = C.purple, style = O.styles.numbers or {} }, --    a floating point constant: 2.3e10
         Boolean = { fg = C.purple, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
-        Identifier = { fg = C.yellow, style = O.styles.variables or {} }, -- (preferred) any variable name
+        Identifier = { fg = C.orange, style = O.styles.variables or {} }, -- (preferred) any variable name
         Function = { fg = C.green, style = O.styles.functions or {} }, -- function name (also: methods for classes)
         Statement = { fg = C.red }, -- (preferred) any statement
         Conditional = { fg = C.red, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
@@ -25,10 +25,10 @@ function M.get()
         Define = { link = "PreProc" }, -- preprocessor #define
         Macro = { fg = C.mauve }, -- same as Define
         PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
-        StorageClass = { fg = C.yellow }, -- static, register, volatile, etC.
-        Structure = { fg = C.yellow }, --  struct, union, enum, etC.
+        StorageClass = { fg = C.blue }, -- static, register, volatile, etC.
+        Structure = { fg = C.fg}, --  struct, union, enum, etC.
         Special = { fg = C.pink }, -- (preferred) any special symbol
-        Type = { fg = C.yellow, style = O.styles.types or {} }, -- (preferred) int, long, char, etC.
+        Type = { fg = C.blue, style = O.styles.types or {} }, -- (preferred) int, long, char, etC.
         Typedef = { link = "Type" }, --  A typedef
         SpecialChar = { link = "Special" }, -- special character in a constant
         Tag = { link = "Special" }, -- you can use CTRL-] on this
