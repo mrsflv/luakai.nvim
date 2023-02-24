@@ -1,23 +1,27 @@
 local M = {}
 local diff = vim.api.nvim_win_get_option(0, "diff")
 
+local bg_normal_nc = nil
+if O.transparent_background and O.dim_inactive.enabled then
+    bg_normal_nc = C.dim
+elseif O.dim_inactive.enabled then
+    bg_normal_nc = C.dim
+elseif O.transparent_background then
+    bg_normal_nc = C.none
+else
+    bg_normal_nc = C.bg0
+end
+
 function M.get()
     return {
         Normal = { fg = C.fg, bg = O.transparent_background and C.none or C.bg0 }, -- normal text
         NormalNC = {
             fg = C.fg,
-            bg = (O.transparent_background and O.dim_inactive.enabled and C.dim)
-            or (O.dim_inactive.enabled and C.dim)
-            or (O.transparent_background and C.none)
-            or C.bg0,
+            bg = bg_normal_nc,
         }, -- normal text in non-current windows
         NormalSB = {link = "NormalNC"}, -- normal text in non-current windows
-        EndOfBuffer = {
-            fg = (O.transparent_background and (O.show_end_of_buffer and C.bg4 or C.bg0))
-            or (O.show_end_of_buffer and (O.dim_inactive.enabled and C.bg4 or C.bg4) or (O.dim_inactive.enabled and C.dim or C.bg0)),
-            bg = (O.transparent_background and C.none)
-            or (O.show_end_of_buffer and (O.dim_inactive.enabled and C.bg_dim or C.bg0) or (O.dim_inactive.enabled and C.bg0 or C.bg0)),
-        }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+
+        EndOfBuffer = { fg = O.show_end_of_buffer and C.bg4 or C.bg0}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         Folded = { fg = C.folded, bg = O.transparent_background and C.none or C.bg1 }, -- line used for closed folds
         FoldColumn = { fg = C.gray_dim, bg = C.none }, -- 'foldcolumn'
 

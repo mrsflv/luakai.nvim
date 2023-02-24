@@ -2,43 +2,43 @@ local C = require("luakai.palettes").get_palette()
 local O = require("luakai").options
 local luakai = {}
 
-local transparent_bg = O.transparent_background and "NONE" or C.bg
+local transparent_bg = O.transparent_background and "NONE" or C.bg1
 
 local luakai = {
   normal = {
-    a = {bg = C.bg_blue[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg4[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.bg_blue, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg4, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   insert = {
-    a = {bg = C.bg_green[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg4[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.bg_green, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg4, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   visual = {
-    a = {bg = C.bg_red[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg4[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.bg_red, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg4, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   replace = {
-    a = {bg = C.orange[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg4[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.orange, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg4, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   command = {
-    a = {bg = C.yellow[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg4[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.yellow, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg4, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   terminal = {
-    a = {bg = C.purple[1], fg = C.bg0[1], gui = 'bold'},
-    b = {bg = C.bg3[1], fg = C.fg[1]},
-    c = {bg = C.bg1[1], fg = C.fg[1]}
+    a = {bg = C.purple, fg = C.bg0, gui = 'bold'},
+    b = {bg = C.bg3, fg = C.fg},
+    c = {bg = C.transparent_bg, fg = C.fg}
   },
   inactive = {
-    a = {bg = C.bg1[1], fg = C.grey[1]},
-    b = {bg = C.bg1[1], fg = C.grey[1]},
-    c = {bg = C.bg1[1], fg = C.grey[1]}
+    a = {bg = C.transparent_bg, fg = C.grey},
+    b = {bg = C.transparent_bg, fg = C.grey},
+    c = {bg = C.transparent_bg, fg = C.grey}
   }
 }
 
