@@ -5,8 +5,8 @@ local M = {}
 -- Reference: https://github.com/EdenEast/nightfox.nvim
 local fmt = string.format
 
-function M.compile(flavour)
-    local theme = require("luakai.lib.mapper").apply(flavour)
+function M.compile(variant)
+    local theme = require("luakai.lib.mapper").apply(variant)
     local lines = {
         [[
 return string.dump(function()
@@ -17,7 +17,7 @@ endif
 set termguicolors
 let g:colors_name = "luakai"]],
     }
-    table.insert(lines, "set background=" .. (flavour == "latte" and [[light]] or [[dark]]))
+    table.insert(lines, "set background=" .. [[dark]])
 
     local tbl = vim.tbl_deep_extend("keep", theme.custom_highlights, theme.integrations, theme.syntax, theme.editor)
 
@@ -59,11 +59,11 @@ let g:colors_name = "luakai"]],
     end
     table.insert(lines, "]]end)")
     if vim.fn.isdirectory(O.compile_path) == 0 then vim.fn.mkdir(O.compile_path, "p") end
-    local file = io.open(O.compile_path .. path_sep .. flavour, "wb")
+    local file = io.open(O.compile_path .. path_sep .. variant, "wb")
     local ls = load or loadstring
 
     if vim.g.luakai_debug then -- Debugging purpose
-        local deb = io.open(O.compile_path .. path_sep .. flavour .. ".lua", "wb")
+        local deb = io.open(O.compile_path .. path_sep .. variant .. ".lua", "wb")
         deb:write(table.concat(lines, "\n"))
         deb:close()
     end
@@ -96,7 +96,7 @@ Below is the error message that we captured:
             "Permission denied while writing compiled file to "
             .. O.compile_path
             .. path_sep
-            .. flavour
+            .. variant
             .. "_compiled.lua"
         )
     end

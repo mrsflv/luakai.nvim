@@ -3,10 +3,7 @@ if is_vim then require "luakai.lib.vim" end
 
 local M = {
     options = {
-        background = {
-            light = "maia",
-            dark = "maia",
-        },
+        default_variant = "base",
         compile_path = os.getenv("HOME") .. "/projects/luakai.nvim/cache/",
         transparent_background = false,
         show_end_of_buffer = false,
@@ -68,48 +65,60 @@ local M = {
         color_overrides = {},
         highlight_overrides = {},
     },
-    flavours = { atlantis = 1,  andromeda = 2, shusia = 3, maia = 4, espresso = 5, default = 6 },
+    variants = { atlantis = 1, andromeda = 2, shusia = 3, maia = 4, espresso = 5,  base = 6 },
     path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
 function M.compile()
-    local user_flavour = M.flavour
-    for flavour, _ in pairs(M.flavours) do
-        M.flavour = flavour
-        require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(flavour)
+    local user_variant = M.variant
+    for variant, _ in pairs(M.variants) do
+        M.variant = variant
+        require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(variant)
     end
-    M.flavour = user_flavour -- Restore user flavour after compile
+    -- BUG: This does not work at the moment,
+    -- it does not restore the user variant 
+    -- after compilation
+    M.variant = user_variant -- Restore user variant after compile
 end
 
-local function get_flavour(default)
-    local flavour
+local function get_variant(default)
+    local variant
+
+    -- XXX: Old implementation from Catppuccin
+    -- if default then -- when the colorscheme is called with an explicit parameter
+    --     variant = default
+    -- elseif vim.g.colors_name == "luakai" then -- after first time load (when it is compiled or when it is called via :colorscheme luakai)
+    --     -- it defaults to the chosen flavour for the specific background after the first time
+    --     variant = M.options.background[vim.o.background]
+    -- else
+    --     variant = M.variant -- first time load
+    -- end
+
     if default then
-        flavour = default
-    elseif vim.g.colors_name == "luakai" then -- after first time load
-        flavour = M.options.background[vim.o.background]
+        variant = default
     else
-        flavour = M.flavour -- first time load
+        variant = M.options.default_variant
     end
 
-    if flavour and not M.flavours[flavour] then
+    if variant and not M.variants[variant] then
         vim.notify(
             string.format(
-                "Luakai (error): Invalid flavour '%s', flavour must be 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso', or 'default'",
-                flavour
+                "Luakai (error): Invalid variant '%s', variant must be 'base', 'atlantis', 'andromeda', 'shusia', 'maia', or 'espresso'",
+                variant
             ),
             vim.log.levels.ERROR
         )
-        flavour = nil
+        variant = nil
     end
-    return flavour or M.options.background[vim.o.background]
+    return variant or M.options.default_variant
 end
 
 local lock = false -- Avoid g:colors_name reloading
 
-function M.load(flavour)
+function M.load(variant)
     if lock then return end
-    M.flavour = get_flavour(flavour)
-    local compiled_path = M.options.compile_path .. M.path_sep .. M.flavour
+    M.variant = get_variant(variant)
+    local compiled_path = M.options.compile_path .. M.path_sep .. M.variant
     lock = true
     local f = loadfile(compiled_path)
     if not f then
@@ -126,7 +135,7 @@ function M.setup(user_conf)
     user_conf = user_conf or {}
     M.options = vim.tbl_deep_extend("keep", user_conf, M.options)
     M.options.highlight_overrides.all = user_conf.custom_highlights or M.options.highlight_overrides.all
-    M.flavour = get_flavour(M.options.flavour or vim.g.luakai_flavour)
+    M.variant = get_variant(M.options.variant or vim.g.luakai_variant)
 
     -- Get cached hash
     local cached_path = M.options.compile_path .. M.path_sep .. "cached"
@@ -160,11 +169,11 @@ if is_vim then return M end
 
 vim.api.nvim_create_user_command(
     "Luakai",
-    function(inp) vim.api.nvim_command("colorscheme luakai-" .. get_flavour(inp.args)) end,
+    function(inp) vim.api.nvim_command("colorscheme luakai-" .. get_variant(inp.args)) end,
     {
         nargs = 1,
         complete = function(line)
-            return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.flavours))
+            return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.variants))
         end,
     }
 )

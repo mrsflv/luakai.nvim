@@ -24,28 +24,29 @@ local function get_integrations()
     return final_integrations
 end
 
-function M.apply(flavour)
-    flavour = flavour or require("luakai").flavour
+function M.apply(variant)
+    variant = variant or require("luakai").variant
     -- Borrowing global var
     _G._O = O
     _G._C = C
     _G._U = U
 
     _G.O = require("luakai").options
-    _G.C = require("luakai.palettes").get_palette(flavour)
+    _G.C = require("luakai.palettes").get_palette(variant)
     _G.U = require "luakai.utils.colors"
 
     C.none = "NONE"
 
+    -- WARN: Not really clear at the moment what it does this block
     local dim_percentage = O.dim_inactive.percentage
     C.dim = O.dim_inactive.shade == "dark"
         and U.vary_color(
-            { shusia = U.darken(C.bg, dim_percentage, C.bg4) },
-            U.darken(C.bg, dim_percentage, C.bg4)
+            { base = U.darken(C.bg0, dim_percentage, C.bg4) },
+            U.darken(C.bg0, dim_percentage, C.bg4)
         )
         or U.vary_color(
-            { shusia = U.lighten("#FBFCFD", dim_percentage, C.bg) },
-            U.lighten(C.bg0, dim_percentage, C.bg)
+            { base = U.lighten("#FBFCFD", dim_percentage, C.bg) },
+            U.lighten(C.bg0, dim_percentage, C.bg0)
         )
 
     local theme = {}
@@ -54,10 +55,10 @@ function M.apply(flavour)
     theme.integrations = get_integrations() -- plugins
     theme.terminal = require("luakai.groups.terminal").get() -- terminal colors
     local user_highlights = require("luakai").options.highlight_overrides
-    if type(user_highlights[flavour]) == "function" then user_highlights[flavour] = user_highlights[flavour](C) end
+    if type(user_highlights[variant]) == "function" then user_highlights[variant] = user_highlights[variant](C) end
     theme.custom_highlights = vim.tbl_deep_extend(
         "keep",
-        user_highlights[flavour] or {},
+        user_highlights[variant] or {},
         type(user_highlights.all) == "function" and user_highlights.all(C) or user_highlights.all or {}
     )
 

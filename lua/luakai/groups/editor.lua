@@ -10,7 +10,7 @@ function M.get()
         CursorColumn = { bg = C.bg1 }, -- Screen-column at the cursor, when 'cursorcolumn' is seC.
         CursorLine = {
             bg = O.transparent_background and C.none
-            or U.vary_color({  default = U.lighten(C.bg1, 0.70, C.bg0) }, U.darken(C.bg1, 0.64, C.bg0)),
+            or U.vary_color({  base = U.lighten(C.bg1, 0.70, C.bg0) }, U.darken(C.bg1, 0.64, C.bg0)),
         }, -- Screen-line at the cursor, when 'cursorline' is seC.  Low-priority if forecrust (ctermfg OR guifg) is not seC.
         Directory = { fg = C.green }, -- directory names (and other special names in listings)
         EndOfBuffer = { fg = O.show_end_of_buffer and C.bg4 or C.bg0 }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.

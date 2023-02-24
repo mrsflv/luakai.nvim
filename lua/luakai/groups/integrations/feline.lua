@@ -34,7 +34,7 @@ local sett = {
     show_modified = false,
 }
 
-if require("luakai").flavour == "latte" then
+if require("luakai").variant == "latte" then
     local latte = require("luakai.palettes").get_palette "latte"
     sett.text = latte.base
     sett.bkg = latte.crust

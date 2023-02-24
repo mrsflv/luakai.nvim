@@ -8,12 +8,12 @@ M.day_brightness = 0.3
 
 ---@param hex_str string hexadecimal value of a color
 local hex_to_rgb = function(hex_str)
-    -- WARN: DEBUG
+    -- WARN: this will allow for the compilation of the colorscheme 
+    -- even if there are not defined colors.
+    -- It should be removed once all the colors and hihglight group
+    -- have been updated
     if not hex_str then
         return {0, 0, 0}
-    end
-    if type(hex_str) == "table" then
-        hex_str = hex_str[1]
     end
 
     local hex = "[abcdef0-9][abcdef0-9]"
@@ -108,9 +108,9 @@ function M.assert_brightness(color)
 end
 
 function M.vary_color(palettes, default)
-    local flvr = require("luakai").flavour
+    local vrnt = require("luakai").variant
 
-    if palettes[flvr] ~= nil then return palettes[flvr] end
+    if palettes[vrnt] ~= nil then return palettes[vrnt] end
     return default
 end
 
