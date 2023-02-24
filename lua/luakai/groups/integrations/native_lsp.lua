@@ -6,17 +6,17 @@ function M.get()
 
     local error = C.red
     local warning = C.yellow
-    local info = C.sky
-    local hint = C.teal
+    local info = C.blue
+    local hint = C.green
     local darkening_percentage = 0.095
 
     return {
         -- These groups are for the native LSP clienC. Some other LSP clients may
         -- use these groups, or use their own. Consult your LSP client's
         -- documentation.
-        LspReferenceText = { bg = C.surface1 }, -- used for highlighting "text" references
-        LspReferenceRead = { bg = C.surface1 }, -- used for highlighting "read" references
-        LspReferenceWrite = { bg = C.surface1 }, -- used for highlighting "write" references
+        LspReferenceText = { link = "CurrentWord" }, -- used for highlighting "text" references
+        LspReferenceRead = { link = "CurrentWord" }, -- used for highlighting "read" references
+        LspReferenceWrite = { link = "CurrentWord" }, -- used for highlighting "write" references
         -- hightlight diagnostics in numberline
 
         DiagnosticVirtualTextError = {

@@ -2,11 +2,11 @@ local M = {}
 
 function M.get()
     return {
-        TelescopeBorder = { fg = C.blue },
-        TelescopeSelectionCaret = { fg = C.flamingo },
+        TelescopeBorder = { fg = C.fg },
+        TelescopeSelectionCaret = { fg = C.fg },
         TelescopeSelection = {
-            fg = O.transparent_background and C.flamingo or C.text,
-            bg = O.transparent_background and C.none or C.surface0,
+            fg = O.transparent_background and C.gray or C.fg,
+            bg = O.transparent_background and C.none or C.bg0,
             style = { "bold" },
         },
         TelescopeMatching = { fg = C.blue },

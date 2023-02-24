@@ -65,7 +65,7 @@ local M = {
         color_overrides = {},
         highlight_overrides = {},
     },
-    variants = { atlantis = 1, andromeda = 2, shusia = 3, maia = 4, espresso = 5,  base = 6 },
+    variants = { atlantis = 1, andromeda = 2, shusia = 3, maia = 4, espresso = 5, base = 6 },
     path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
@@ -75,14 +75,8 @@ function M.compile()
         M.variant = variant
         require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(variant)
     end
-    -- BUG: This does not work at the moment,
-    -- it does not restore the user variant 
-    -- after compilation
     M.variant = user_variant -- Restore user variant after compile
 end
-
-local function get_variant(default)
-    local variant
 
     -- XXX: Old implementation from Catppuccin
     -- if default then -- when the colorscheme is called with an explicit parameter
@@ -94,8 +88,13 @@ local function get_variant(default)
     --     variant = M.variant -- first time load
     -- end
 
+local function get_variant(default)
+    local variant
+
     if default then
         variant = default
+    elseif M.variant then
+        variant = M.variant
     else
         variant = M.options.default_variant
     end
@@ -184,7 +183,11 @@ vim.api.nvim_create_user_command("LuakaiCompile", function()
     end
     M.compile()
     vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
-    vim.api.nvim_command "colorscheme luakai"
+    if M.variants then
+        vim.api.nvim_command("colorscheme luakai-" .. M.variant )
+    else
+        vim.api.nvim_command("colorscheme luakai-" .. M.options.default_variant)
+    end
 end, {})
 
 return M

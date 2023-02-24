@@ -37,17 +37,8 @@ function M.apply(variant)
 
     C.none = "NONE"
 
-    -- WARN: Not really clear at the moment what it does this block
     local dim_percentage = O.dim_inactive.percentage
-    C.dim = O.dim_inactive.shade == "dark"
-        and U.vary_color(
-            { base = U.darken(C.bg0, dim_percentage, C.bg4) },
-            U.darken(C.bg0, dim_percentage, C.bg4)
-        )
-        or U.vary_color(
-            { base = U.lighten("#FBFCFD", dim_percentage, C.bg) },
-            U.lighten(C.bg0, dim_percentage, C.bg0)
-        )
+    C.dim = O.dim_inactive.shade == "dark" and U.darken(C.bg_dim, dim_percentage, C.black) or C.bg_dim
 
     local theme = {}
     theme.syntax = require("luakai.groups.syntax").get()
