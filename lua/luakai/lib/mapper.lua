@@ -47,12 +47,11 @@ function M.apply(variant)
     theme.terminal = require("luakai.groups.terminal").get() -- terminal colors
     local user_highlights = require("luakai").options.highlight_overrides
     if type(user_highlights[variant]) == "function" then user_highlights[variant] = user_highlights[variant](C) end
-    -- theme.custom_highlights = vim.tbl_deep_extend(
-    --     "keep",
-    --     user_highlights[variant] or {},
-    --     type(user_highlights.all) == "function" and user_highlights.all(C) or user_highlights.all or {}
-    -- )
-    theme.custom_highlights = {}
+    theme.custom_highlights = vim.tbl_deep_extend(
+        "keep",
+        user_highlights[variant] or {},
+        type(user_highlights.all) == "function" and user_highlights.all(C) or user_highlights.all or {}
+    )
 
     -- Returning global var
     _G.O = _G._O

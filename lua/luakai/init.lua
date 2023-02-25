@@ -66,14 +66,17 @@ local M = {
         highlight_overrides = {},
     },
     variants = { atlantis = 1, andromeda = 2, shusia = 3, maia = 4, espresso = 5, base = 6 },
+    -- variants = { base = 1 },
     path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
 }
 
 function M.compile()
+    local user_vrnt = M.variant
     for variant, _ in pairs(M.variants) do
         M.variant = variant
         require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(variant)
     end
+    M.variant = user_vrnt
     vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
 end
 
