@@ -8,7 +8,7 @@ function M.get()
         DapLogPoint = { fg = C.blue },
         DapStopped = { fg = C.orange },
         -- nvim-dap-ui
-        DAPUIScope = { fg = C.blue },
+        DAPUIScope = { fg = C.blue, bg = C.bg3 },
         DAPUIType = { fg = C.blue },
         DAPUIValue = { fg = C.purple },
         DAPUIVariable = { fg = C.fg },
@@ -33,7 +33,7 @@ function M.get()
         DapUIStop = { fg = C.red },
         DapUIPlayPause = { fg = C.yellow },
         DapUIRestart = { fg = C.green },
-        DapUIUnavailable = { fg = C.gray },
+        DapUIUnavailable = { fg = C. },
     }
 end
 

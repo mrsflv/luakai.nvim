@@ -1,1 +1,1 @@
-lua require("luakai").load()
+lua require("luakai").load "base"

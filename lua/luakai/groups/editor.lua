@@ -1,15 +1,16 @@
 local M = {}
 local diff = vim.api.nvim_win_get_option(0, "diff")
 
-local bg_normal_nc = nil
-if O.transparent_background and O.dim_inactive.enabled then
-    bg_normal_nc = C.dim
-elseif O.dim_inactive.enabled then
-    bg_normal_nc = C.dim
-elseif O.transparent_background then
-    bg_normal_nc = C.none
-else
-    bg_normal_nc = C.bg0
+local function get_dim_bg( )
+    if O.transparent_background and O.dim_inactive.enabled then
+        return C.dim
+    elseif O.dim_inactive.enabled then
+        return C.dim
+    elseif O.transparent_background then
+        return C.none
+    else
+        return C.bg0
+    end
 end
 
 function M.get()
@@ -17,7 +18,7 @@ function M.get()
         Normal = { fg = C.fg, bg = O.transparent_background and C.none or C.bg0 }, -- normal text
         NormalNC = {
             fg = C.fg,
-            bg = bg_normal_nc,
+            bg = get_dim_bg(),
         }, -- normal text in non-current windows
         NormalSB = {link = "NormalNC"}, -- normal text in non-current windows
 

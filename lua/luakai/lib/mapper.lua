@@ -38,7 +38,7 @@ function M.apply(variant)
     C.none = "NONE"
 
     local dim_percentage = O.dim_inactive.percentage
-    C.dim = O.dim_inactive.shade == "dark" and U.darken(C.bg_dim, dim_percentage, C.black) or C.bg_dim
+    C.dim = O.dim_inactive.shade == "dark" and U.darken(C.bg0, dim_percentage, C.black) or C.bg0
 
     local theme = {}
     theme.syntax = require("luakai.groups.syntax").get()
