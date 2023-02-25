@@ -12,9 +12,6 @@ local hex_to_rgb = function(hex_str)
     -- even if there are not defined colors.
     -- It should be removed once all the colors and hihglight group
     -- have been updated
-    if not hex_str then
-        return {0, 0, 0}
-    end
 
     local hex = "[abcdef0-9][abcdef0-9]"
     local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"

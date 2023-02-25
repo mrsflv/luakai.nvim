@@ -19,14 +19,14 @@ local M = {
             comments = { "italic" },
             conditionals = { "italic" },
             loops = {},
-            functions = {"bold"},
+            functions = { "bold" },
             keywords = {},
             strings = {},
             variables = {},
             numbers = {},
             booleans = {},
             properties = {},
-            types = {"bold", "italic"},
+            types = { "bold", "italic" },
             operators = {},
         },
         integrations = {
@@ -70,23 +70,22 @@ local M = {
 }
 
 function M.compile()
-    local user_variant = M.variant
     for variant, _ in pairs(M.variants) do
         M.variant = variant
         require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(variant)
     end
-    M.variant = user_variant -- Restore user variant after compile
+    vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
 end
 
-    -- XXX: Old implementation from Catppuccin
-    -- if default then -- when the colorscheme is called with an explicit parameter
-    --     variant = default
-    -- elseif vim.g.colors_name == "luakai" then -- after first time load (when it is compiled or when it is called via :colorscheme luakai)
-    --     -- it defaults to the chosen flavour for the specific background after the first time
-    --     variant = M.options.background[vim.o.background]
-    -- else
-    --     variant = M.variant -- first time load
-    -- end
+-- XXX: Old implementation from Catppuccin
+-- if default then -- when the colorscheme is called with an explicit parameter
+--     variant = default
+-- elseif vim.g.colors_name == "luakai" then -- after first time load (when it is compiled or when it is called via :colorscheme luakai)
+--     -- it defaults to the chosen flavour for the specific background after the first time
+--     variant = M.options.background[vim.o.background]
+-- else
+--     variant = M.variant -- first time load
+-- end
 
 local function get_variant(default)
     local variant
@@ -182,12 +181,7 @@ vim.api.nvim_create_user_command("LuakaiCompile", function()
         if name:match "^luakai" and name ~= "luakai" then package.loaded[name] = nil end
     end
     M.compile()
-    vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
-    if M.variants then
-        vim.api.nvim_command("colorscheme luakai-" .. M.variant )
-    else
-        vim.api.nvim_command("colorscheme luakai-" .. M.options.default_variant)
-    end
+    vim.api.nvim_command("colorscheme luakai-base")
 end, {})
 
 return M

@@ -25,44 +25,38 @@ local assets = {
 }
 
 local sett = {
-    text = C.surface0,
-    bkg = C.surface0,
-    diffs = C.mauve,
-    extras = C.overlay1,
-    curr_file = C.maroon,
-    curr_dir = C.flamingo,
+    text = C.gray,
+    bkg = C.gray,
+    diffs = C.blue,
+    extras = C.green,
+    curr_file = C.fg,
+    curr_dir = C.fg,
     show_modified = false,
 }
-
-if require("luakai").variant == "latte" then
-    local latte = require("luakai.palettes").get_palette "latte"
-    sett.text = latte.base
-    sett.bkg = latte.crust
-end
 
 if require("luakai").options.transparent_background then sett.bkg = "NONE" end
 
 local mode_colors = {
-    ["n"] = { "NORMAL", C.lavender },
-    ["no"] = { "N-PENDING", C.lavender },
+    ["n"] = { "NORMAL", C.blue },
+    ["no"] = { "N-PENDING", C.blue },
     ["i"] = { "INSERT", C.green },
     ["ic"] = { "INSERT", C.green },
-    ["t"] = { "TERMINAL", C.green },
-    ["v"] = { "VISUAL", C.flamingo },
-    ["V"] = { "V-LINE", C.flamingo },
-    [""] = { "V-BLOCK", C.flamingo },
-    ["R"] = { "REPLACE", C.maroon },
-    ["Rv"] = { "V-REPLACE", C.maroon },
-    ["s"] = { "SELECT", C.maroon },
-    ["S"] = { "S-LINE", C.maroon },
-    [""] = { "S-BLOCK", C.maroon },
-    ["c"] = { "COMMAND", C.peach },
-    ["cv"] = { "COMMAND", C.peach },
-    ["ce"] = { "COMMAND", C.peach },
-    ["r"] = { "PROMPT", C.teal },
-    ["rm"] = { "MORE", C.teal },
-    ["r?"] = { "CONFIRM", C.mauve },
-    ["!"] = { "SHELL", C.green },
+    ["t"] = { "TERMINAL", C.purple },
+    ["v"] = { "VISUAL", C.red },
+    ["V"] = { "V-LINE", C.red },
+    [""] = { "V-BLOCK", C.red },
+    ["R"] = { "REPLACE", C.yellow },
+    ["Rv"] = { "V-REPLACE", C.yellow },
+    ["s"] = { "SELECT", C.orange },
+    ["S"] = { "S-LINE", C.orange },
+    [""] = { "S-BLOCK", C.orange },
+    ["c"] = { "COMMAND", C.yellow },
+    ["cv"] = { "COMMAND", C.yellow },
+    ["ce"] = { "COMMAND", C.yellow },
+    ["r"] = { "PROMPT", C.grren },
+    ["rm"] = { "MORE", C.green },
+    ["r?"] = { "CONFIRM", C.green },
+    ["!"] = { "SHELL", C.purple },
 }
 
 function M.setup(opts)

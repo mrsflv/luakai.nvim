@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
     return {
-        Beacon = { bg = C.blue },
+        Beacon = { bg = C.bg4 },
     }
 end
 

@@ -2,9 +2,9 @@ local M = {}
 
 function M.get()
     return {
-        TroubleText = { fg = C.green },
-        TroubleCount = { fg = C.pink, bg = C.surface1 },
-        TroubleNormal = { fg = C.text, bg = C.crust },
+        TroubleText = { fg = C.fg },
+        TroubleCount = { fg = C.gray},
+        TroubleNormal = { fg = C.gray},
     }
 end
 

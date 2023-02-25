@@ -5,9 +5,9 @@ function M.get()
         -- These groups are for the coc.nvim, see ":h coc-highlights"
         -- Custom popup menu since coc v0.0.82
         CocMenuSel = { link = "PmenuSel" },
-        CocPumSearch = { fg = C.sky, style = { "bold" } },
+        CocPumSearch = { fg = C.blue, style = { "bold" } },
         -- InlayHints
-        CocInlayHint = { fg = C.teal },
+        CocInlayHint = { fg = C.gray },
     }
 end
 

@@ -1,35 +1,35 @@
 local M = {}
 
 function M.get()
-    local active_bg = O.transparent_background and C.none or C.mantle
-    local inactive_bg = O.transparent_background and C.none or C.base
+    local active_bg = O.transparent_background and C.none or C.bg0
+    local inactive_bg = O.transparent_background and C.none or C.gray_dim
     return {
-        NeoTreeDirectoryName = { fg = C.blue },
-        NeoTreeDirectoryIcon = { fg = C.blue },
-        NeoTreeNormal = { fg = C.text, bg = active_bg },
-        NeoTreeExpander = { fg = C.overlay0 },
-        NeoTreeIndentMarker = { fg = C.overlay0 },
-        NeoTreeRootName = { fg = C.blue, style = { "bold" } },
-        NeoTreeSymbolicLinkTarget = { fg = C.pink },
-        NeoTreeGitAdded = { fg = C.green },
-        NeoTreeGitConflict = { fg = C.red },
+        NeoTreeDirectoryName = { fg = C.fg },
+        NeoTreeDirectoryIcon = { fg = C.green },
+        NeoTreeNormal = { fg = C.fg, bg = active_bg },
+        NeoTreeExpander = { fg = C.bg1 },
+        NeoTreeIndentMarker = { fg = C.bg1 },
+        NeoTreeRootName = { fg = C.red, style = { "bold" } },
+        NeoTreeSymbolicLinkTarget = { fg = C.yellow },
+        NeoTreeGitAdded = { fg = C.fg },
+        NeoTreeGitConflict = { fg = C.yellow },
         NeoTreeGitDeleted = { fg = C.red },
-        NeoTreeGitIgnored = { fg = C.overlay0 },
-        NeoTreeGitModified = { fg = C.yellow },
-        NeoTreeGitUnstaged = { fg = C.red },
-        NeoTreeGitUntracked = { fg = C.blue },
-        NeoTreeGitStaged = { fg = C.green },
-        NeoTreeFloatBorder = { fg = C.blue },
-        NeoTreeFloatTitle = { fg = C.subtext0 },
-        NeoTreeFileNameOpened = { fg = C.pink },
-        NeoTreeDimText = { fg = C.overlay1 },
+        NeoTreeGitIgnored = { fg = C.gray },
+        NeoTreeGitModified = { fg = C.blue },
+        NeoTreeGitUnstaged = { fg = C.purple },
+        NeoTreeGitUntracked = { fg = C.orange },
+        NeoTreeGitStaged = { fg = C.purple },
+        NeoTreeFloatBorder = { fg = C.bg1 },
+        NeoTreeFloatTitle = { fg = C.bg4 },
+        NeoTreeFileNameOpened = { fg = C.fg },
+        NeoTreeDimText = { fg = C.gray_dim },
         NeoTreeFilterTerm = { fg = C.green, style = { "bold" } },
-        NeoTreeTabActive = { bg = active_bg, fg = C.lavender, style = { "bold" } },
-        NeoTreeTabInactive = { bg = inactive_bg, fg = C.overlay0 },
+        NeoTreeTabActive = { bg = active_bg, fg = C.fg, style = { "bold" } },
+        NeoTreeTabInactive = { bg = inactive_bg, fg = C.fg },
         NeoTreeTabSeparatorActive = { fg = active_bg, bg = active_bg },
         NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
         NeoTreeVertSplit = { fg = C.base, bg = inactive_bg },
-        NeoTreeStatusLineNC = { fg = C.mantle, bg = C.mantle },
+        NeoTreeStatusLineNC = { fg = C.fg, bg = C.bg0 },
     }
 end
 

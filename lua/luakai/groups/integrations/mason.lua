@@ -1,14 +1,14 @@
 local M = {}
 
 function M.get()
-    local bg = O.transparent_background and C.none or C.lavender
-    local fg = O.transparent_background and C.lavender or C.base
+    local bg = O.transparent_background and C.none or C.bg1
+    local fg = O.transparent_background and C.fg or C.bg1
 
     local secondary_bg = O.transparent_background and C.none or C.blue
-    local secondary_fg = O.transparent_background and C.blue or C.base
+    local secondary_fg = O.transparent_background and C.blue or C.bg0
 
-    local muted_bg = O.transparent_background and C.none or C.overlay0
-    local muted_fg = O.transparent_background and C.overlay0 or C.base
+    local muted_bg = O.transparent_background and C.none or C.bg1
+    local muted_fg = O.transparent_background and C.bg3 or C.bg0
 
     return {
         MasonHeader = { fg = fg, bg = bg, style = { "bold" } },
@@ -16,17 +16,17 @@ function M.get()
         MasonHighlight = { fg = C.green },
         MasonHighlightBlock = {
             bg = O.transparent_background and C.none or C.green,
-            fg = O.transparent_background and C.green or C.base,
+            fg = O.transparent_background and C.green or C.bg2,
         },
         MasonHighlightBlockBold = { bg = secondary_bg, fg = secondary_fg, bold = true },
-        MasonHighlightSecondary = { fg = C.mauve },
+        MasonHighlightSecondary = { fg = C.bg4 },
         MasonHighlightBlockSecondary = { fg = secondary_fg, bg = secondary_bg },
         MasonHighlightBlockBoldSecondary = { fg = fg, bg = bg, bold = true },
-        MasonMuted = { fg = C.overlay0 },
+        MasonMuted = { fg = C.bg2 },
         MasonMutedBlock = { bg = muted_bg, fg = muted_fg },
         MasonMutedBlockBold = { bg = C.yellow, fg = C.base, bold = true },
         MasonError = { fg = C.red },
-        MasonHeading = { fg = C.lavender, bold = true },
+        MasonHeading = { fg = C.green, bold = true },
     }
 end
 

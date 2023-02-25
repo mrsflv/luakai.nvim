@@ -20,22 +20,22 @@ function M.get()
         -- hightlight diagnostics in numberline
 
         DiagnosticVirtualTextError = {
-            bg = O.transparent_background and C.none or U.darken(error, darkening_percentage, C.base),
+            bg = O.transparent_background and C.none or U.darken(error, darkening_percentage, C.bg0),
             fg = error,
             style = virtual_text.errors,
         }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
         DiagnosticVirtualTextWarn = {
-            bg = O.transparent_background and C.none or U.darken(warning, darkening_percentage, C.base),
+            bg = O.transparent_background and C.none or U.darken(warning, darkening_percentage, C.bg0),
             fg = warning,
             style = virtual_text.warnings,
         }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
         DiagnosticVirtualTextInfo = {
-            bg = O.transparent_background and C.none or U.darken(info, darkening_percentage, C.base),
+            bg = O.transparent_background and C.none or U.darken(info, darkening_percentage, C.bg0),
             fg = info,
             style = virtual_text.information,
         }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
         DiagnosticVirtualTextHint = {
-            bg = O.transparent_background and C.none or U.darken(hint, darkening_percentage, C.base),
+            bg = O.transparent_background and C.none or U.darken(hint, darkening_percentage, C.bg0),
             fg = hint,
             style = virtual_text.hints,
         }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
@@ -60,7 +60,7 @@ function M.get()
         LspDiagnosticsDefaultWarning = { fg = warning }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         LspDiagnosticsDefaultInformation = { fg = info }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
         LspDiagnosticsDefaultHint = { fg = hint }, -- Used as the mantle highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-        LspSignatureActiveParameter = { fg = C.peach },
+        LspSignatureActiveParameter = { fg = C.orange },
         -- LspDiagnosticsFloatingError         = { }, -- Used to color "Error" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingWarning       = { }, -- Used to color "Warning" diagnostic messages in diagnostics float
         -- LspDiagnosticsFloatingInformation   = { }, -- Used to color "Information" diagnostic messages in diagnostics float
@@ -78,8 +78,8 @@ function M.get()
         LspDiagnosticsUnderlineWarning = { style = underlines.warnings, sp = warning }, -- Used to underline "Warning" diagnostics
         LspDiagnosticsUnderlineInformation = { style = underlines.information, sp = info }, -- Used to underline "Information" diagnostics
         LspDiagnosticsUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
-        LspCodeLens = { fg = C.overlay0 }, -- virtual text of the codelens
-        LspInfoBorder = { fg = C.blue }, -- LspInfo border
+        LspCodeLens = { fg = C.bg1 }, -- virtual text of the codelens
+        LspInfoBorder = { fg = C.bg3 }, -- LspInfo border
     }
 end
 
