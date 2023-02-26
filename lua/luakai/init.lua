@@ -36,10 +36,12 @@ local M = {
             markdown = true,
             neotree = true,
             telescope = true,
-            vim_bookmarks = true,
             treesitter = not is_vim,
-            barbecue = {
-                dim_dirname = true,
+            treesitter_context = not is_vim,
+            vim_bookmarks = true,
+            dap = {
+                enabled = true,
+                enabled_ui = true,
             },
             indent_blankline = {
                 enabled = true,
@@ -78,16 +80,6 @@ function M.compile()
     M.variant = user_vrnt
     vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
 end
-
--- XXX: Old implementation from Catppuccin
--- if default then -- when the colorscheme is called with an explicit parameter
---     variant = default
--- elseif vim.g.colors_name == "luakai" then -- after first time load (when it is compiled or when it is called via :colorscheme luakai)
---     -- it defaults to the chosen flavour for the specific background after the first time
---     variant = M.options.background[vim.o.background]
--- else
---     variant = M.variant -- first time load
--- end
 
 local function get_variant(default)
     local variant
@@ -166,17 +158,6 @@ function M.setup(user_conf)
 end
 
 if is_vim then return M end
-
-vim.api.nvim_create_user_command(
-    "Luakai",
-    function(inp) vim.api.nvim_command("colorscheme luakai-" .. get_variant(inp.args)) end,
-    {
-        nargs = 1,
-        complete = function(line)
-            return vim.tbl_filter(function(val) return vim.startswith(val, line) end, vim.tbl_keys(M.variants))
-        end,
-    }
-)
 
 vim.api.nvim_create_user_command("LuakaiCompile", function()
     for name, _ in pairs(package.loaded) do

@@ -1,4 +1,5 @@
 doc/
+autoload/
 cache/
 .vscode/
 .DS_Store

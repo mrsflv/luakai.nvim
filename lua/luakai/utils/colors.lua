@@ -8,11 +8,6 @@ M.day_brightness = 0.3
 
 ---@param hex_str string hexadecimal value of a color
 local hex_to_rgb = function(hex_str)
-    -- WARN: this will allow for the compilation of the colorscheme 
-    -- even if there are not defined colors.
-    -- It should be removed once all the colors and hihglight group
-    -- have been updated
-
     local hex = "[abcdef0-9][abcdef0-9]"
     local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
     hex_str = string.lower(hex_str)

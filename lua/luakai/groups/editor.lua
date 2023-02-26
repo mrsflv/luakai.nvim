@@ -32,7 +32,7 @@ function M.get()
         CursorColumn = { bg = C.bg1, fg = C.none}, -- Screen-column at the cursor, when 'cursorcolumn' is seC.
         ColorColumn = { fg = C.none, bg = C.bg1 }, -- used for the columns set with 'colorcolumn'
         Conceal = { fg = C.grey_dim , bg = C.none}, -- placeholder characters substituted for concealed text (see 'conceallevel')
-        Cursor = { fg = C.none, bg = C.none, style = {"reverse"} }, -- character under the cursor
+        Cursor = { fg = C.fg, bg = C.bg0}, -- character under the cursor
 
         iCursor = { link = "Cursor" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         vCursor = { link = "Cursor" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')

@@ -6,7 +6,10 @@ function M.get()
             bg = O.transparent_background and C.none or C.bg2,
             fg = C.fg,
         },
-        TreesitterContextLineNumber = { fg = C.fg },
+        TreesitterContextLineNumber = {
+            fg = C.gay,
+            bg = O.transparent_background and C.none or C.bg2
+        },
     }
 end
 
