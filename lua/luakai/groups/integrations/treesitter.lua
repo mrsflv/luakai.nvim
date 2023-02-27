@@ -17,7 +17,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
 
         -- Misc
         ["@comment"] = { link = "Comment" },
-        ["@error"] = { link = "Error" },
+        ["@error"] = { fg = C.fg },
         ["@preproc"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
         ["@define"] = { link = "Define" }, -- preprocessor definition directives
         ["@operator"] = { link = "Operator" }, -- For any operator: +, but also -> and * in C.
@@ -61,8 +61,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
 
         ["@type"] = { link = "Type" }, -- For types.
         ["@type.builtin"] = { fg = C.blue, style = O.styles.properties or "italic" }, -- For builtin types.
-        ["@type.definition"] = { link = "@type" }, -- type definitions (e.g. `typedef` in C)
-        ["@type.qualifier"] = { link = "@type" }, -- type qualifiers (e.g. `const`)
+        ["@type.definition"] = { fg = C.red}, -- type definitions (e.g. `typedef` in C)
+        ["@type.qualifier"] = { fg = C.red}, -- type qualifiers (e.g. `const`)
         ["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
         ["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
         ["@field"] = { fg = C.orange }, -- For fields.

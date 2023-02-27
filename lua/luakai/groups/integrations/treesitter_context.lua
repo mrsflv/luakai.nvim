@@ -7,7 +7,7 @@ function M.get()
             fg = C.fg,
         },
         TreesitterContextLineNumber = {
-            fg = C.gay,
+            fg = C.yellow,
             bg = O.transparent_background and C.none or C.bg2
         },
     }
