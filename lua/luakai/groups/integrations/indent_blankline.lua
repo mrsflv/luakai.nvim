@@ -2,8 +2,8 @@ local M = {}
 
 function M.get()
     local hi = {
-        IndentBlanklineChar = { fg = C.bg3 },
-        IndentBlanklineContextChar = { fg = C.fg },
+        IndentBlanklineChar = { fg = C.bg3, style = { "nocombine"} },
+        IndentBlanklineContextChar = { fg = C.fg, style = { "nocombine"} },
         IndentBlanklineContextStart = { sp = C.fg, style = { "underline" } },
     }
 
