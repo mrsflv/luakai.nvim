@@ -3,7 +3,7 @@ local M = {}
 function M.get()
     return {
         VimwikiLink = { fg = C.blue, bg = C.none, styke = {"underline"} },
-        VimwikiHeaderChar = { fg = C.grey, bg = C.none },
+        VimwikiHeaderChar = { fg = C.gray, bg = C.none },
         VimwikiHR = { fg = C.yellow, bg = C.none },
         VimwikiList = { fg = C.red, bg = C.none },
         VimwikiTag = { fg = C.blue, bg = C.none },

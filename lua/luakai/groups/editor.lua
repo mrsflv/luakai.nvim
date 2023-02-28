@@ -1,5 +1,4 @@
 local M = {}
-local diff = vim.api.nvim_win_get_option(0, "diff")
 
 local function get_dim_bg( )
     if O.transparent_background and O.dim_inactive.enabled then
@@ -23,7 +22,7 @@ function M.get()
         NormalSB = {link = "NormalNC"}, -- normal text in non-current windows
 
         EndOfBuffer = { fg = O.show_end_of_buffer and C.bg4 or C.bg0}, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-        Folded = { fg = C.folded, bg = O.transparent_background and C.none or C.bg1 }, -- line used for closed folds
+        Folded = { fg = C.gray, bg = O.transparent_background and C.none or C.bg1 }, -- line used for closed folds
         FoldColumn = { fg = C.gray_dim, bg = C.none }, -- 'foldcolumn'
 
         SignColumn = { fg = C.fg ,bg = C.none}, -- column where |signs| are displayed
@@ -31,7 +30,7 @@ function M.get()
         IncSearch = { bg = C.bg_red, fg = C.bg }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         CursorColumn = { bg = C.bg1, fg = C.none}, -- Screen-column at the cursor, when 'cursorcolumn' is seC.
         ColorColumn = { fg = C.none, bg = C.bg1 }, -- used for the columns set with 'colorcolumn'
-        Conceal = { fg = C.grey_dim , bg = C.none}, -- placeholder characters substituted for concealed text (see 'conceallevel')
+        Conceal = { fg = C.gray_dim , bg = C.none}, -- placeholder characters substituted for concealed text (see 'conceallevel')
         Cursor = { fg = C.fg, bg = C.bg0}, -- character under the cursor
 
         iCursor = { link = "Cursor" }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -40,7 +39,7 @@ function M.get()
         CursorIM = { link = "Cursor" }, -- like Cursor, but used when in IME mode |CursorIM|
         CursorLine = { bg = O.transparent_background and C.none or U.darken(C.bg1, 0.64, C.black) }, -- Screen-line at the cursor, when 'cursorline' is seC.  Low-priority if forecrust (ctermfg OR guifg) is not seC.
 
-        LineNr = { fg = C.grey_dim, bg = C.none}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is seC.
+        LineNr = { fg = C.gray_dim, bg = C.none}, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is seC.
         CursorLineNr = { fg = C.fg , bg = C.none}, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 
         VertSplit = { fg = O.transparent_background and C.bg4 or C.black, bg = O.transparent_background and C.bg_dim or C.none }, -- the column separating vertically split windows

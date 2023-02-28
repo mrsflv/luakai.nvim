@@ -20,8 +20,8 @@ local color_palette = {
     green       = '#9ed072',
     blue        = '#76cce0',
     purple      = '#b39df3',
-    grey        = '#7f8490',
-    grey_dim    = '#595f6f',
+    gray        = '#7f8490',
+    gray_dim    = '#595f6f',
     none        = 'NONE'
 }
 

@@ -7,7 +7,7 @@ function M.get()
     local secondary_bg = O.transparent_background and C.none or C.blue
     local secondary_fg = O.transparent_background and C.blue or C.bg1
 
-    local muted_bg = O.transparent_background and C.none or C.grey
+    local muted_bg = O.transparent_background and C.none or C.gray
     local muted_fg = O.transparent_background and C.bg0 or C.bg1
 
     return {
@@ -19,10 +19,10 @@ function M.get()
              fg = O.transparent_background and C.green or C.bg2,
         },
         MasonHighlightBlockBold = { bg = secondary_bg, fg = secondary_fg, bold = true },
-        MasonHighlightSecondary = { fg = C.grey },
+        MasonHighlightSecondary = { fg = C.gray },
         MasonHighlightBlockSecondary = { fg = secondary_fg, bg = secondary_bg },
         MasonHighlightBlockBoldSecondary = { fg = fg, bg = bg, bold = true },
-        MasonMuted = { fg = C.grey, },
+        MasonMuted = { fg = C.gray, },
         MasonMutedBlock = { bg = muted_bg, fg = muted_fg },
         MasonMutedBlockBold = { bg = C.yellow, fg = C.bg0, bold = true },
         MasonError = { fg = C.red },

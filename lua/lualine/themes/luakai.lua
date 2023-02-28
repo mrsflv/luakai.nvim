@@ -35,9 +35,9 @@ local luakai = {
     c = {bg = transparent_bg, fg = C.fg}
   },
   inactive = {
-    a = {bg = transparent_bg, fg = C.grey},
-    b = {bg = transparent_bg, fg = C.grey},
-    c = {bg = transparent_bg, fg = C.grey}
+    a = {bg = transparent_bg, fg = C.gray},
+    b = {bg = transparent_bg, fg = C.gray},
+    c = {bg = transparent_bg, fg = C.gray}
   }
 }
 

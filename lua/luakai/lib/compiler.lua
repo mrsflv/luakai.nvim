@@ -34,8 +34,6 @@ vim.g.colors_name = "luakai"]],
         end
     end
 
-    -- require("luakai").debug_print(tbl)
-
     for group, color in pairs(tbl) do
         if color.style then
             for _, style in pairs(color.style) do
