@@ -9,7 +9,7 @@ function M.get()
         NeoTreeNormal = { fg = C.fg, bg = active_bg },
         NeoTreeExpander = { fg = C.bg1 },
         NeoTreeIndentMarker = { fg = C.bg1 },
-        NeoTreeRootName = { fg = C.red, style = { "bold" } },
+        NeoTreeRootName = { fg = C.gray, style = { "bold" } },
         NeoTreeSymbolicLinkTarget = { fg = C.yellow },
         NeoTreeGitAdded = { fg = C.fg },
         NeoTreeGitConflict = { fg = C.yellow },
