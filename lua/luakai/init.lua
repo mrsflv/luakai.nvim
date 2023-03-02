@@ -1,6 +1,3 @@
-local is_vim = vim.fn.has "nvim" ~= 1
-if is_vim then require "luakai.lib.vim" end
-
 local M = {
     options = {
         default_variant = "base",
@@ -36,8 +33,8 @@ local M = {
             markdown = true,
             neotree = true,
             telescope = true,
-            treesitter = not is_vim,
-            treesitter_context = not is_vim,
+            treesitter = true,
+            treesitter_context = true,
             vim_bookmarks = true,
             dap = {
                 enabled = true,
@@ -75,7 +72,7 @@ function M.compile()
     local user_vrnt = M.variant
     for variant, _ in pairs(M.variants) do
         M.variant = variant
-        require("luakai.lib." .. (is_vim and "vim." or "") .. "compiler").compile(variant)
+        require("luakai.lib.compiler").compile(variant)
     end
     M.variant = user_vrnt
     vim.notify("Luakai (info): compiled cache!", vim.log.levels.INFO)
@@ -156,8 +153,6 @@ function M.setup(user_conf)
         end
     end
 end
-
-if is_vim then return M end
 
 vim.api.nvim_create_user_command("LuakaiCompile", function()
     for name, _ in pairs(package.loaded) do
