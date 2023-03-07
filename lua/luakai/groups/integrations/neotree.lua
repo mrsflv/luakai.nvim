@@ -2,7 +2,7 @@ local M = {}
 
 function M.get()
     local active_bg = O.transparent_background and C.none or C.bg0
-    local inactive_bg = O.transparent_background and C.none or C.gray_dim
+    local inactive_bg = O.transparent_background and C.none or C.dim
     return {
         NeoTreeDirectoryName = { fg = C.fg },
         NeoTreeDirectoryIcon = { fg = C.green },
@@ -24,8 +24,8 @@ function M.get()
         NeoTreeFileNameOpened = { fg = C.fg },
         NeoTreeDimText = { fg = C.fg },
         NeoTreeFilterTerm = { fg = C.green, style = { "bold" } },
-        NeoTreeTabActive = { bg = active_bg, fg = C.fg, style = { "bold" } },
-        NeoTreeTabInactive = { bg = inactive_bg, fg = C.fg },
+        NeoTreeTabActive = { bg = active_bg, fg = C.fg, style = { "italic" } },
+        NeoTreeTabInactive = { bg = inactive_bg, fg = C.gray },
         NeoTreeTabSeparatorActive = { fg = active_bg, bg = active_bg },
         NeoTreeTabSeparatorInactive = { fg = inactive_bg, bg = inactive_bg },
         NeoTreeVertSplit = { fg = C.base, bg = inactive_bg },

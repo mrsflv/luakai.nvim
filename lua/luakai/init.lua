@@ -31,6 +31,7 @@ local M = {
             mason = true,
             gitsigns = true,
             markdown = true,
+            mini = true,
             neotree = true,
             telescope = true,
             treesitter = true,
@@ -159,7 +160,7 @@ vim.api.nvim_create_user_command("LuakaiCompile", function()
         if name:match "^luakai" and name ~= "luakai" then package.loaded[name] = nil end
     end
     M.compile()
-    vim.api.nvim_command("colorscheme luakai")
+    vim.api.nvim_command("colorscheme luakai-maia")
 end, {})
 
 return M
