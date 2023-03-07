@@ -3,12 +3,12 @@ local M = {}
 function M.get()
     return {
         TreesitterContext = {
-            bg = O.transparent_background and C.none or C.diff_blue,
+            bg = O.transparent_background and C.none or C.bg3,
             fg = C.fg,
         },
         TreesitterContextLineNumber = {
-            fg = C.yellow,
-            bg = O.transparent_background and C.none or C.diff_blue
+            fg = C.gray,
+            bg = O.transparent_background and C.none or C.bg3
         },
     }
 end
