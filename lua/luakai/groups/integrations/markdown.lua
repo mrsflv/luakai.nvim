@@ -3,15 +3,16 @@ local M = {}
 function M.get()
     return {
         markdownHeadingDelimiter = { fg = C.gray, style = { "bold" } },
-        markdownCode = { fg = C.green},
-        markdownCodeBlock = { fg = C.green },
+        markdownHeadingRule = { fg = C.gray, style = { "bold" } },
+        markdownCode = { fg = C.gray},
+        markdownCodeBlock = { fg = C.gray },
         markdownLinkText = { fg = C.blue, style = { "underline" } },
-        markdownH1 = { fg = C.red },
-        markdownH2 = { fg = C.orange },
-        markdownH3 = { fg = C.yellow },
-        markdownH4 = { fg = C.green },
-        markdownH5 = { fg = C.blue },
-        markdownH6 = { fg = C.purple },
+        markdownH6 = { fg = C.red },
+        markdownH5 = { fg = C.orange },
+        markdownH4 = { fg = C.yellow },
+        markdownH3 = { fg = C.green },
+        markdownH2 = { fg = C.blue },
+        markdownH1 = { fg = C.purple },
     }
 end
 

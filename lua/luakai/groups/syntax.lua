@@ -73,9 +73,10 @@ function M.get()
         DiffChange = {fg = C.none, bg = C.diff_blue}, -- diff mode: Changed line |diff.txt|
         DiffDelete = {fg = C.none, bg = C.diff_red}, -- diff mode: Deleted line |diff.txt|
         DiffText = {fg = C.bg0, bg = C.blue}, -- diff mode: Changed text within a changed line |diff.txt|
+
         -- NeoVim
         healthError = { fg = C.red },
-        healthSuccess = { fg = C.geen },
+        healthSuccess = { fg = C.green },
         healthWarning = { fg = C.yellow },
         -- misc
 
