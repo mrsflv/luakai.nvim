@@ -2,38 +2,19 @@ local M = {}
 
 function M.get()
     return {
-        LspNamespace = { fg = C.blue, style = { "italic" } },
-        LspType = { fg = C.blue, style = O.styles.types or {} },
-        LspClass = { fg = C.blue, style = O.styles.keywords or {} },
-        -- LspEnum = {},
-        -- LspInterface =
-        LspStruct = { fg = C.blue },
-        LspTypeParameter = { fg = C.blue, style = O.styles.types or {} }, -- For types.
-        LspParameter = { fg = C.fg, style = { "italic" } }, -- For parameters of a function.
-        LspVariable = { fg = C.fg, style = O.styles.variables or {} },
-        LspProperty = { fg = C.orange, style = O.styles.properties or {} },
-        -- LspEnumMember =
-        -- LspEvent =
-        LspFunction = { fg = C.green, style = O.styles.functions or {} },
-        LspMethod = { fg = C.green, style = O.styles.functions or {} }, -- For method calls and definitions.
-        LspMacro = { fg = C.green, style = O.styles.functions or {} },
-        LspKeyword = { fg = C.red, style = O.styles.keywords or {} },
-        -- LspModifier =
-        LspComment = { fg = C.gray, style = O.styles.comments },
-        LspString = { fg = C.yellow, style = O.styles.strings or {} },
-        LspNumber = { fg = C.purple, style = O.styles.numbers or {} },
-        -- LspRegexp =
-        LspOperator = { fg = C.red, style = O.styles.operators or {} },
-        -- LspDeclaration =
-        -- LspDefinition =
-        -- LspReadonly =
-        -- LspStatic =
-        LspDeprecated = { fg = C.bg2, style = { "strikethrough" } },
-        -- LspAbstract =
-        -- LspAsync =
-        -- LspModification =
-        -- LspDocumentation =
-        -- LspDefaultLibrary =
+            ["@lsp.type.enum"] = { link = "@type" },
+            ["@lsp.type.enumMember"] = { link = "@constant" },
+            ["@lsp.type.keyword"] = { link = "@keyword" },
+            ["@lsp.type.interface"] = { link = "@interface" },
+            ["@lsp.type.namespace"] = { link = "@namespace" },
+            ["@lsp.type.parameter"] = { link = "@parameter" },
+            ["@lsp.type.class"] = { link = "@type" },
+            ["@lsp.type.property"] = { link = "@property" },
+            ["@lsp.type.variable"] = { link = "@variable"}, -- use treesitter styles for regular variables
+            ["@lsp.type.macro"] = { style = {"italic"}}, -- use treesitter styles for regular variables
+            ["@lsp.type.comment"] = { link = "@comment"}, -- use treesitter styles for regular variables
+            ["@lsp.typemod.function.defaultLibrary"] = { style = {'italic'} },
+            ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
     }
 end
 

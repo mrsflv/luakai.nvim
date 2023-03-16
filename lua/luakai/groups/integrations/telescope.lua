@@ -17,8 +17,8 @@ function M.get()
         -- TelescopePromptBorder = { bg = C.crust, fg = C.crust },
         -- TelescopeResultsBorder = { bg = C.mantle, fg = C.crust },
         -- TelescopePreviewBorder = { bg = C.crust, fg = C.crust },
-        TelescopePromptTitle = { fg = C.bg0, bg = C.orange },
-        TelescopeResultsTitle = { fg = C.bg0, bg = C.bg_green },
+        TelescopePromptTitle = { fg = C.bg0, bg = C.bg_green },
+        TelescopeResultsTitle = { fg = C.bg0, bg = C.orange },
         TelescopePreviewTitle = { fg = C.bg0, bg = C.orange },
     }
 end

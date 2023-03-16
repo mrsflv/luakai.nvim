@@ -39,7 +39,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         ["@function"] = { link = "Function" }, -- For function (calls and definitions).
         ["@function.builtin"] = { fg = C.green, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
         ["@function.call"] = { link = "@function" }, -- function calls
-        ["@function.macro"] = { fg = C.green, style = O.styles.functions or {} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+        ["@function.macro"] = { fg = C.green, style = {"italic"} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
         ["@method"] = { fg = C.green, style = O.styles.functions or {} }, -- For method calls and definitions.
         ["@method.call"] = { link = "@method" }, -- method calls
         ["@constructor"] = { fg = C.green }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
@@ -73,7 +73,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         ["@variable.builtin"] = { fg = C.purple }, -- Variable names that are defined by the languages, like this or self.
         ["@constant"] = { fg = C.purple }, -- For constants
         ["@constant.builtin"] = { fg = C.purple, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
-        ["@constant.macro"] = { link = "Macro" }, -- For constants that are defined by macros: NULL in C.
+        ["@constant.macro"] = { fg = C.purple }, -- For constants that are defined by macros: NULL in C.
         ["@namespace"] = { fg = C.blue, style = { "italic" } }, -- For identifiers referring to modules and namespaces.
         ["@symbol"] = { fg = C.fg },
         -- Text
