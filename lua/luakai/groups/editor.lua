@@ -83,7 +83,7 @@ function M.get()
         Directory = { fg = C.green, bg = C.none}, -- directory names (and other special names in listings)
 
         ErrorMsg = { fg = C.red, style = { "bold", "italic" } }, -- error messages on the command line
-        MatchParen = {fg = C.None, bg = C.bg4, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+        MatchParen = {fg = C.none, bg = C.bg4, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg = { fg = C.fg, style = { "bold" } }, -- 'showmode' message (e.g., "-- INSERT -- ")
         -- MsgArea = { fg = C.fg }, -- Area for messages and cmdline, don't set this highlight because of https://github.com/neovim/neovim/issues/17832
         MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'

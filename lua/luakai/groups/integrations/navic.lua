@@ -1,10 +1,7 @@
 local M = {}
--- Backwards compatibility
-if type(O.integrations.navic) == "boolean" then O.integrations.navic = { custom_bg = C.bg0 } end
-
-local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.none
 
 function M.get()
+	local background = O.integrations.navic.custom_bg and O.integrations.navic.custom_bg or C.bg4
     return {
         NavicIconsFile = { fg = C.fg, bg = background },
         NavicIconsModule = { fg = C.blue, bg = background },
@@ -24,7 +21,7 @@ function M.get()
         NavicIconsNumber = { fg = C.purple, bg = background },
         NavicIconsBoolean = { fg = C.purple, bg = background },
         NavicIconsArray = { fg = C.orange, bg = background },
-        NavicIconsObject = { fg = C.bluw, bg = background },
+        NavicIconsObject = { fg = C.blue, bg = background },
         NavicIconsKey = { fg = C.red, style = O.styles.keywords, bg = background },
         NavicIconsNull = { fg = C.gray, bg = background },
         NavicIconsEnumMember = { fg = C.purple, bg = background },
