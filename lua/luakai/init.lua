@@ -32,9 +32,6 @@ local M = {
             gitsigns = true,
             markdown = true,
             mini = true,
-            navic = {
-				enabled = true,
-			},
             neotree = true,
             telescope = true,
             treesitter = true,
