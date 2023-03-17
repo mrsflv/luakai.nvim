@@ -25,7 +25,7 @@ function M.get()
 
         terminal_color_7 = C.fg,
         terminal_color_15 = C.fg,
-}
+    }
 end
 
 return M

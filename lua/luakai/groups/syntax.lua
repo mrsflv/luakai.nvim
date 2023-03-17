@@ -4,7 +4,7 @@ function M.get()
     return {
         Comment = { fg = C.gray, bg = C.none, style = O.styles.comments }, -- just comments
         SpecialComment = { link = "Comment" }, -- special things inside a comment
-        Constant = { fg = C.orange, bg = C.none}, -- (preferred) any constant
+        Constant = { fg = C.orange, bg = C.none }, -- (preferred) any constant
         String = { fg = C.yellow, bg = C.bg, style = O.styles.strings or {} }, -- a string constant: "this is a string"
         Character = { fg = C.yellow, bg = C.none }, --  a character constant: 'c', '\n'
         Number = { fg = C.purple, bg = C.none, style = O.styles.numbers or {} }, --   a number constant: 234, 0xff
@@ -12,7 +12,7 @@ function M.get()
         Boolean = { fg = C.purple, bg = C.none, style = O.styles.booleans or {} }, --  a boolean constant: TRUE, false
         Identifier = { fg = C.orange, bg = C.none, style = O.styles.variables or {} }, -- (preferred) any variable name
         Function = { fg = C.green, bg = C.none, style = O.styles.functions or {} }, -- function name (also: methods for classes)
-        Statement = { fg = C.red, bg = C.none}, -- (preferred) any statement
+        Statement = { fg = C.red, bg = C.none }, -- (preferred) any statement
         Conditional = { fg = C.red, bg = C.none, style = O.styles.conditionals or {} }, --  if, then, else, endif, switch, etC.
         Repeat = { fg = C.red, bg = C.none, style = O.styles.loops or {} }, --   for, do, while, etC.
         Label = { fg = C.purple }, --    case, default, etC.
@@ -34,7 +34,7 @@ function M.get()
         Tag = { fg = C.orange, bg = C.none }, -- you can use CTRL-] on this
         Delimiter = { fg = C.fg, bg = C.none }, -- character that needs attention
         -- Specialoverlay0= { }, -- special things inside a overlay0
-        Debug = { fg = C.yellow, bg = C.none}, -- debugging statements
+        Debug = { fg = C.yellow, bg = C.none }, -- debugging statements
         Underlined = { style = { "underline" } }, -- (preferred) text that stands out, HTML links
         Bold = { style = { "bold" } },
         Italic = { style = { "italic" } },
@@ -42,7 +42,7 @@ function M.get()
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
         Error = { fg = C.red }, -- (preferred) any erroneous construct
-        Todo = { fg = C.blue , bg = C.none , style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        Todo = { fg = C.blue, bg = C.none, style = { "bold" } }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
         qfLineNr = { fg = C.yellow },
         qfFileName = { fg = C.blue },
         htmlH1 = { fg = C.orange, style = { "bold" } },
@@ -58,21 +58,21 @@ function M.get()
         debugPC = { fg = C.bg0, bg = O.transparent_background and C.none or C.green }, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = { bg = C.red, fg = C.bg0 }, -- used for breakpoint colors in terminal-debug
         -- illuminate
-        illuminatedWord = { fg = C.none, bg = C.none, style = {"italic"}},
-        illuminatedCurWord = { fg = C.none, bg = C.none, style = {"italic", "bold"}},
+        illuminatedWord = { fg = C.none, bg = C.none, style = { "italic" } },
+        illuminatedCurWord = { fg = C.none, bg = C.none, style = { "italic", "bold" } },
         -- diff
         diffAdded = { fg = C.green, bg = C.none },
-        diffRemoved = { fg = C.red , bg = C.none },
-        diffChanged = { fg = C.blue , bg = C.none },
-        diffOldFile = { fg = C.yellow , bg = C.none },
-        diffNewFile = { fg = C.orange , bg = C.none },
+        diffRemoved = { fg = C.red, bg = C.none },
+        diffChanged = { fg = C.blue, bg = C.none },
+        diffOldFile = { fg = C.yellow, bg = C.none },
+        diffNewFile = { fg = C.orange, bg = C.none },
         diffFile = { fg = C.purple, bg = C.none },
-        diffLine = { fg = C.gray, bg = C.none  },
+        diffLine = { fg = C.gray, bg = C.none },
         diffIndexLine = { fg = C.purple, bg = C.none },
-        DiffAdd = { fg = C.none, bg = C.diff_green}, -- diff mode: Added line |diff.txt|
-        DiffChange = {fg = C.none, bg = C.diff_blue}, -- diff mode: Changed line |diff.txt|
-        DiffDelete = {fg = C.none, bg = C.diff_red}, -- diff mode: Deleted line |diff.txt|
-        DiffText = {fg = C.bg0, bg = C.blue}, -- diff mode: Changed text within a changed line |diff.txt|
+        DiffAdd = { fg = C.none, bg = C.diff_green }, -- diff mode: Added line |diff.txt|
+        DiffChange = { fg = C.none, bg = C.diff_blue }, -- diff mode: Changed line |diff.txt|
+        DiffDelete = { fg = C.none, bg = C.diff_red }, -- diff mode: Deleted line |diff.txt|
+        DiffText = { fg = C.bg0, bg = C.blue }, -- diff mode: Changed text within a changed line |diff.txt|
 
         -- NeoVim
         healthError = { fg = C.red },

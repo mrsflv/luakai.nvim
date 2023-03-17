@@ -36,7 +36,7 @@ function M.get(user_config)
         tab_close = { fg = C.fg, bg = inactive_bg },
         indicator_selected = { fg = C.fg, bg = active_bg, style = styles },
         -- separators
-        separator = { fg = separator_fg, bg = inactive_bg},
+        separator = { fg = separator_fg, bg = inactive_bg },
         separator_visible = { fg = separator_fg, bg = inactive_bg },
         separator_selected = { fg = separator_fg, bg = inactive_bg },
         offset_separator = { fg = separator_fg, bg = active_bg },
@@ -88,8 +88,7 @@ function M.get(user_config)
     }
 
     local user_highlights = user_config.custom or {}
-    highlights =
-        vim.tbl_deep_extend("keep", user_highlights[ctp.variant] or {}, user_highlights.all or {}, highlights)
+    highlights = vim.tbl_deep_extend("keep", user_highlights[ctp.variant] or {}, user_highlights.all or {}, highlights)
 
     for _, color in pairs(highlights) do
         -- Because default is gui=bold,italic

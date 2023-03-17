@@ -1,7 +1,7 @@
 local M = {
     options = {
         default_variant = "base",
-        compile_path = os.getenv("HOME") .. "/projects/luakai.nvim/cache/",
+        compile_path = os.getenv "HOME" .. "/projects/luakai.nvim/cache/",
         transparent_background = false,
         show_end_of_buffer = false,
         term_colors = false,
@@ -60,7 +60,7 @@ local M = {
                     information = { "underline" },
                 },
             },
-            semantic_tokens = false,
+            semantic_tokens = true,
         },
         color_overrides = {},
         highlight_overrides = {},
@@ -161,7 +161,7 @@ vim.api.nvim_create_user_command("LuakaiCompile", function()
         if name:match "^luakai" and name ~= "luakai" then package.loaded[name] = nil end
     end
     M.compile()
-    vim.api.nvim_command("colorscheme luakai-maia")
+    vim.api.nvim_command "colorscheme luakai-maia"
 end, {})
 
 return M

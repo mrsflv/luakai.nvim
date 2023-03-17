@@ -24,7 +24,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         -- Punctuation
         ["@punctuation.delimiter"] = { fg = C.red }, -- For delimiters ie: .
         ["@punctuation.bracket"] = { fg = C.yellow }, -- For brackets and parenthesis.
-        ["@punctuation.special"] = { fg = C.red , style = O.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
+        ["@punctuation.special"] = { fg = C.red, style = O.styles.operators or {} }, -- For special punctutation that does not fall in the catagories before.
         -- Literals
         ["@string"] = { link = "String" }, -- For strings.
         ["@string.regex"] = { fg = C.green, style = O.styles.strings or {} }, -- For regexes.
@@ -39,11 +39,11 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         ["@function"] = { link = "Function" }, -- For function (calls and definitions).
         ["@function.builtin"] = { fg = C.green, style = O.styles.functions or {} }, -- For builtin functions: table.insert in Lua.
         ["@function.call"] = { link = "@function" }, -- function calls
-        ["@function.macro"] = { fg = C.green, style = {"italic"} }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
+        ["@function.macro"] = { fg = C.green, style = { "italic" } }, -- For macro defined functions (calls and definitions): each macro_rules in RusC.
         ["@method"] = { fg = C.green, style = O.styles.functions or {} }, -- For method calls and definitions.
         ["@method.call"] = { link = "@method" }, -- method calls
         ["@constructor"] = { fg = C.green }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-        ["@parameter"] = { fg = C.fg, style = { "italic" } }, -- For parameters of a function.
+        ["@parameter"] = { fg = C.fg, style = { "bold", "italic" } }, -- For parameters of a function.
         -- Keywords
         ["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
         ["@keyword.function"] = { fg = C.red, style = O.styles.keywords or {} }, -- For keywords used to define a function.
@@ -61,8 +61,8 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
 
         ["@type"] = { link = "Type" }, -- For types.
         ["@type.builtin"] = { fg = C.blue, style = O.styles.properties or "italic" }, -- For builtin types.
-        ["@type.definition"] = { fg = C.blue}, -- type definitions (e.g. `typedef` in C)
-        ["@type.qualifier"] = { fg = C.red}, -- type qualifiers (e.g. `const`)
+        ["@type.definition"] = { fg = C.blue }, -- type definitions (e.g. `typedef` in C)
+        ["@type.qualifier"] = { fg = C.red }, -- type qualifiers (e.g. `const`)
         ["@storageclass"] = { link = "StorageClass" }, -- visibility/life-time/etc. modifiers (e.g. `static`)
         ["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
         ["@field"] = { fg = C.orange }, -- For fields.
@@ -87,15 +87,15 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         ["@text.literal"] = { link = "String" }, -- used for inline code in markdown and for doc in python (""")
         ["@text.uri"] = { fg = C.blue, style = { "italic", "underline" } }, -- urls, links and emails
         ["@text.math"] = { fg = C.yellow }, -- math environments (e.g. `$ ... $` in LaTeX)
-        ["@text.environment"] = { link = "Macro"}, -- text environments of markup languages
+        ["@text.environment"] = { link = "Macro" }, -- text environments of markup languages
         ["@text.environment.name"] = { link = "Type" }, -- text indicating the type of an environment
         ["@text.reference"] = { link = "Constant" }, -- references
         ["@text.todo"] = { link = "Todo" }, -- todo notes
         ["@text.todo.checked"] = { link = "Todo" }, -- todo notes
         ["@text.todo.unchecked"] = { link = "Todo" }, -- todo notes
-        ["@text.note"] = { fg = C.bg0, bg = C.blue, style = {"bold"} },
-        ["@text.warning"] = { fg = C.bg0, bg = C.yellow, style = {"bold"}},
-        ["@text.danger"] = { fg = C.bg0, bg = C.red, style = {"bold"} },
+        ["@text.note"] = { fg = C.bg0, bg = C.blue, style = { "bold" } },
+        ["@text.warning"] = { fg = C.bg0, bg = C.yellow, style = { "bold" } },
+        ["@text.danger"] = { fg = C.bg0, bg = C.red, style = { "bold" } },
         ["@text.diff.add"] = { link = "diffAdded" }, -- added text (for diff files)
         ["@text.diff.delete"] = { link = "diffRemoved" }, -- deleted text (for diff files)
         -- Tags
@@ -106,7 +106,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
         ["@class"] = { fg = C.blue },
         ["@struct"] = { fg = C.blue },
         ["@enum"] = { fg = C.purple },
-        ["@enumMember"] = { fg = C.purple, style = {"italic"} },
+        ["@enumMember"] = { fg = C.purple, style = { "italic" } },
         ["@event"] = { fg = C.event },
         ["@interface"] = { fg = C.blue },
         ["@modifier"] = { fg = C.red },
