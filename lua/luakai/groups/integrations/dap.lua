@@ -6,7 +6,7 @@ function M.get()
         DapBreakpoint = { fg = C.yellow },
         DapBreakpointCondition = { fg = C.yellow },
         DapLogPoint = { fg = C.yellow },
-        DapStopped = { fg = C.orange },
+        DapStopped = { fg = C.green },
         -- nvim-dap-ui
         DAPUIScope = { fg = C.blue, bg = C.bg3 },
         DAPUIType = { fg = C.blue },
