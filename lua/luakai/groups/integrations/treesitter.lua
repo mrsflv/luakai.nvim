@@ -71,6 +71,7 @@ If you want to stay on nvim 0.7, either disable the integration or pin luakai ta
 
         ["@variable"] = { fg = C.fg, style = O.styles.variables or {} }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = C.purple }, -- Variable names that are defined by the languages, like this or self.
+        ["@variable.member"] = { fg = C.orange },
         ["@constant"] = { fg = C.purple }, -- For constants
         ["@constant.builtin"] = { fg = C.purple, style = O.styles.keywords or {} }, -- For constant that are built in the language: nil in Lua.
         ["@constant.macro"] = { fg = C.purple }, -- For constants that are defined by macros: NULL in C.
