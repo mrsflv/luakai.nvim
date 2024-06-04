@@ -95,6 +95,8 @@ function M.get()
     Whitespace = { fg = C.bg4 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = { link = "PmenuSel" }, -- current match in 'wildmenu' completion
     WinBar = { fg = C.gray },
+    WinBarNC = { fg = C.gray },
+		WinSeparator = {fg = C.bg2 , bg = C.none }
   }
 end
 
