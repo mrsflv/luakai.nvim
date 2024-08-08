@@ -14,8 +14,8 @@ function M.get()
     -- These groups are for the native LSP clienC. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
-    LspReferenceText = { link = "CurrentWord" }, -- used for highlighting "text" references
-    LspReferenceRead = { link = "CurrentWord" }, -- used for highlighting "read" references
+    LspReferenceText =  { link = "CurrentWord" }, -- used for highlighting "text" references
+    LspReferenceRead =  { link = "CurrentWord" }, -- used for highlighting "read" references
     LspReferenceWrite = { link = "CurrentWord" }, -- used for highlighting "write" references
     -- hightlight diagnostics in numberline
 
@@ -39,15 +39,16 @@ function M.get()
       fg = hint,
       style = virtual_text.hints,
     }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticError = { bg = C.none, fg = error, style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticWarn = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticInfo = { bg = C.none, fg = info, style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticHint = { bg = C.none, fg = hint, style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticError = { bg = C.none, fg = error  , style = virtual_text.errors }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticWarn  = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticInfo  = { bg = C.none, fg = info   , style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticHint  = { bg = C.none, fg = hint   , style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticDeprecated = { bg = C.none, fg = C.gray, style = underlines.hints , sp = C.gray }, -- Used to underline "Error" diagnostics
     -- for nvim nightly
-    DiagnosticUnderlineError = { style = underlines.errors, sp = error }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn = { style = underlines.warnings, sp = warning }, -- Used to underline "Warn" diagnostics
-    DiagnosticUnderlineInfo = { style = underlines.information, sp = info }, -- Used to underline "Info" diagnostics
-    DiagnosticUnderlineHint = { style = underlines.hints, sp = hint }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineError = { bg = C.none, fg = C.none, style = underlines.errors     , sp = error }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn  = { bg = C.none, fg = C.none, style = underlines.warnings   , sp = warning }, -- Used to underline "Warn" diagnostics
+    DiagnosticUnderlineInfo  = { bg = C.none, fg = C.none, style = underlines.information, sp = info }, -- Used to underline "Info" diagnostics
+    DiagnosticUnderlineHint  = { bg = C.none, fg = C.none, style = underlines.hints      , sp = hint }, -- Used to underline "Hint" diagnostics
     DiagnosticFloatingError = { fg = error }, -- Used to color "Error" diagnostic messages in diagnostics float
     DiagnosticFloatingWarn = { fg = warning }, -- Used to color "Warn" diagnostic messages in diagnostics float
     DiagnosticFloatingInfo = { fg = info }, -- Used to color "Info" diagnostic messages in diagnostics float
