@@ -43,8 +43,7 @@ function M.get()
     DiagnosticWarn  = { bg = C.none, fg = warning, style = virtual_text.warnings }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticInfo  = { bg = C.none, fg = info   , style = virtual_text.information }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
     DiagnosticHint  = { bg = C.none, fg = hint   , style = virtual_text.hints }, -- Used as the mantle highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticDeprecated = { bg = C.none, fg = C.gray, style = underlines.hints , sp = C.gray }, -- Used to underline "Error" diagnostics
-    -- for nvim nightly
+    DiagnosticDeprecated = { bg = C.none, fg = C.gray, style = {"strikethrough"} , sp = C.gray }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineError = { bg = C.none, fg = C.none, style = underlines.errors     , sp = error }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn  = { bg = C.none, fg = C.none, style = underlines.warnings   , sp = warning }, -- Used to underline "Warn" diagnostics
     DiagnosticUnderlineInfo  = { bg = C.none, fg = C.none, style = underlines.information, sp = info }, -- Used to underline "Info" diagnostics

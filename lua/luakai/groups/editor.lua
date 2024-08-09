@@ -88,7 +88,7 @@ function M.get()
     -- MsgArea = { fg = C.fg }, -- Area for messages and cmdline, don't set this highlight because of https://github.com/neovim/neovim/issues/17832
     MsgSeparator = {}, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = C.blue, style = { "bold" } }, -- |more-prompt|
-    Title = { fg = C.red, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etC.
+    Title = { fg = C.green, style = { "bold" } }, -- titles for output from ":set all", ":autocmd" etC.
     Visual = { bg = C.bg3, style = { "bold" } }, -- Visual mode selection
     VisualNOS = { bg = C.bg3, style = { "bold", "underline" } }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = C.fg, style = { "bold" } }, -- warning messages
