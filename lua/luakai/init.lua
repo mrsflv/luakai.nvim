@@ -1,7 +1,16 @@
+local path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1)
+
+local base_path
+if path_sep == "\\" then
+	base_path = os.getenv("%UserProfile%")
+else
+	base_path = os.getenv("HOME")
+end
+
 local M = {
     options = {
         default_variant = "base",
-        compile_path = os.getenv "HOME" .. "/projects/luakai.nvim/cache/",
+        compile_path = base_path .. "/projects/luakai.nvim/cache/",
         transparent_background = false,
         show_end_of_buffer = false,
         term_colors = false,
@@ -67,7 +76,7 @@ local M = {
     },
     variants = { atlantis = 1, andromeda = 2, shusia = 3, maia = 4, espresso = 5, base = 6 },
     -- variants = { base = 1 },
-    path_sep = jit and (jit.os == "Windows" and "\\" or "/") or package.config:sub(1, 1),
+    path_sep = path_sep,
 }
 
 function M.compile()
