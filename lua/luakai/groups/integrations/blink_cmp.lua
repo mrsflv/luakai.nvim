@@ -2,10 +2,10 @@ local M = {}
 
 function M.get()
   return {
-    BlinkCmpLabel = { fg = C.overlay2 },
+    BlinkCmpLabel = { fg = C.fg },
     BlinkCmpLabelDeprecated = { fg = C.gray, style = { "strikethrough" } },
 
-    BlinkCmpLabelMatch = { fg = C.green, style = { "bold" } },
+    BlinkCmpLabelMatch = { style = O.integrations.native_lsp.underlines.information },
     BlinkCmpKindText = { fg = C.fg },
     BlinkCmpKindMethod = { fg = C.green },
     BlinkCmpKindFunction = { fg = C.green },
@@ -30,7 +30,8 @@ function M.get()
     BlinkCmpKindStruct = { fg = C.blue },
     BlinkCmpKindEvent = { fg = C.blue },
     BlinkCmpKindOperator = { fg = C.green },
-    BlinkCmpKindTypeParameter = { fg = C.fg, style = { "bold" } },
+    BlinkCmpKindTypeParameter = { fg = C.fg, style = {"bold", "italic"}},
+		BlinkCmpMenuSelector = {bg = C.none, style = {"bold", "italic"}},
   }
 end
 

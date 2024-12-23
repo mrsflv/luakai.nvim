@@ -37,6 +37,7 @@ local M = {
         },
         integrations = {
             cmp = true,
+						blink_cmp = true,
             mason = true,
             gitsigns = true,
             markdown = true,
