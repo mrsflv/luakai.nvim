@@ -3,9 +3,10 @@ local M = {}
 function M.get()
   return {
     BlinkCmpLabel = { fg = C.fg },
+		BlinkCmpLabelDetail = { link = "Comment" },
     BlinkCmpLabelDeprecated = { fg = C.gray, style = { "strikethrough" } },
 
-    BlinkCmpLabelMatch = { fg = C.yellow },
+    BlinkCmpLabelMatch = { fg = C.blue},
     BlinkCmpKindText = { fg = C.fg },
     BlinkCmpKindMethod = { fg = C.green },
     BlinkCmpKindFunction = { fg = C.green },
