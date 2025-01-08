@@ -6,7 +6,7 @@ function M.get()
 		BlinkCmpLabelDetail = { link = "Comment" },
     BlinkCmpLabelDeprecated = { fg = C.gray, style = { "strikethrough" } },
 
-    BlinkCmpLabelMatch = { fg = C.blue},
+    BlinkCmpLabelMatch = { bg = C.bg4, style = { "bold", "italic" }},
     BlinkCmpKindText = { fg = C.fg },
     BlinkCmpKindMethod = { fg = C.green },
     BlinkCmpKindFunction = { fg = C.green },
