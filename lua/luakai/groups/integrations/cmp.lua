@@ -6,8 +6,8 @@ function M.get()
     CmpItemAbbrDeprecated = { fg = C.gray, style = { "strikethrough" } },
     CmpItemKind = { fg = C.blue },
     CmpItemMenu = { fg = C.fg },
-    CmpItemAbbrMatch = { fg = C.blue, style = { "bold" } },
-    CmpItemAbbrMatchFuzzy = { fg = C.blue, style = { "bold" } },
+    CmpItemAbbrMatch = { bg = C.bg4, style = { "bold", "italic" } },
+    CmpItemAbbrMatchFuzzy = { bg = C.bg4, style = { "bold", "italic" } },
     -- kind support
     CmpItemKindSnippet = { fg = C.yellow },
     CmpItemKindKeyword = { fg = C.red },

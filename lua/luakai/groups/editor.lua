@@ -96,7 +96,7 @@ function M.get()
     WildMenu = { link = "PmenuSel" }, -- current match in 'wildmenu' completion
     WinBar = { fg = C.gray },
     WinBarNC = { fg = C.gray },
-		WinSeparator = {fg = C.bg2 , bg = C.none }
+    WinSeparator = { fg = C.bg2, bg = C.none },
   }
 end
 
