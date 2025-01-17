@@ -11,7 +11,12 @@ local function inspect(t)
     local q = (type(v) == "string" or type(v) == "table") and [["]] or ""
     table.insert(list, fmt([[%s = %s%s%s]], k, q, tostring(v), q))
   end
-  return fmt([[{ %s }]], table.concat(list, ", "))
+  if #list > 0 then
+    local tmp = fmt([[{ %s]], table.concat(list, ", "))
+    return fmt("%s, force = true }", tmp)
+  else
+    return fmt([[{ %s }]], table.concat(list, ", "))
+  end
 end
 
 function M.compile(variant)
