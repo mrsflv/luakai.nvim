@@ -16,7 +16,7 @@ function M.get()
     MasonHighlight = { fg = C.green },
     MasonHighlightBlock = {
       bg = O.transparent_background and C.none or C.green,
-      fg = O.transparent_background and C.green or C.bg2,
+      fg = O.transparent_background and C.green or C.bg4,
     },
     MasonHighlightBlockBold = { bg = secondary_bg, fg = secondary_fg, bold = true },
     MasonHighlightSecondary = { fg = C.gray },
