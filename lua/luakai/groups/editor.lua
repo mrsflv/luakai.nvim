@@ -52,6 +52,7 @@ function M.get()
 
     NormalFloat = { fg = C.fg, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2 }, -- Normal text in floating windows.
     FloatBorder = { fg = C.gray, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2 },
+    FloatTitle = { fg = C.green, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2 }, -- Normal text in floating windows.
 
     Question = { fg = C.yellow, bg = C.none }, -- |hit-enter| prompt and yes/no questions
 

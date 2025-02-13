@@ -71,6 +71,7 @@ local M = {
         },
       },
       semantic_tokens = true,
+			snacks = true,
     },
     color_overrides = {},
     highlight_overrides = {},
