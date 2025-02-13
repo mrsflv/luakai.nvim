@@ -50,9 +50,9 @@ function M.get()
     Substitute = { fg = C.bg0, bg = C.yellow }, -- |:substitute| replacement text highlighting
     NonText = { fg = C.bg4, bg = C.none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
-    NormalFloat = { fg = C.fg, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2 }, -- Normal text in floating windows.
-    FloatBorder = { fg = C.gray, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2 },
-    FloatTitle = { fg = C.green, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg2, style = {"bold"} }, -- Normal text in floating windows.
+    NormalFloat = { fg = C.fg, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1 }, -- Normal text in floating windows.
+    FloatBorder = { fg = C.gray, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1 },
+    FloatTitle = { fg = C.green, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1, style = {"bold"} }, -- Normal text in floating windows.
 
     Question = { fg = C.yellow, bg = C.none }, -- |hit-enter| prompt and yes/no questions
 
