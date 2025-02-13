@@ -46,7 +46,7 @@ function M.get()
     SnacksDashboardSpecial = { link = "Special" },
     SnacksDashboardTitle = { link = "Title" },
 
-
+    SnacksPickerMatch = { fg = C.blue },
     SnacksPickerDir = { link = "Directory" },
     SnacksPickerTotals = { link = "Comment" },
     SnacksPickerBufFlags = { link = "Comment" },
@@ -56,6 +56,7 @@ function M.get()
     SnacksPickerPathIgnored = { link = "Comment" },
     SnacksPickerGitStatusIgnored = { link = "Comment" },
     SnacksPickerGitStatusUntracked = { link = "Comment" },
+		SnacksPickerSearch = {link = "Visual"},
   }
 end
 
