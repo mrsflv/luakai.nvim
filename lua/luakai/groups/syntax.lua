@@ -27,9 +27,9 @@ function M.get()
     PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
     StorageClass = { fg = C.red, bg = C.none }, -- static, register, volatile, etC.
     Structure = { link = "StorageClass" }, --  struct, union, enum, etC.
-		Struct = {fg = C.blue},
-    Special = { fg = C.orange, bg = C.none }, -- (preferred) any special symbol
+    Special = { fg = C.purple, bg = C.none }, -- (preferred) any special symbol
     Type = { fg = C.blue, bg = C.none, style = O.styles.types or {} }, -- (preferred) int, long, char, etC.
+    Struct = { fg = C.blue },
     Typedef = { fg = C.red, bg = C.none }, --  A typedef
     SpecialChar = { link = "Special" }, -- special character in a constant
     Tag = { fg = C.orange, bg = C.none }, -- you can use CTRL-] on this
