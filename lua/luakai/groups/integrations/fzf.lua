@@ -2,9 +2,11 @@ local M = {}
 
 function M.get()
   return {
-    -- FzfLuaNormal = { link = "NormalFloat" }, -- Respect fzf-lua's default float bg
+    FzfLuaNormal = { link = "NormalFloat" }, -- Respect fzf-lua's default float bg
     FzfLuaBorder = { link = "FloatBorder" },
     FzfLuaTitle = { link = "FloatTitle" },
+    FzfLuaCursor = { fg = C.fg, bg = C.bg4 },
+    FzfLuaCursorLine = { bg = C.bg4 },
     FzfLuaHeaderBind = { fg = C.yellow },
     FzfLuaHeaderText = { fg = C.peach },
     FzfLuaDirPart = { link = "Directory" },

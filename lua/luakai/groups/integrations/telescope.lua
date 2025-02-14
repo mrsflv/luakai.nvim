@@ -11,12 +11,14 @@ function M.get()
       style = { "bold" },
     },
     TelescopeMatching = { fg = C.blue },
-    TelescopePromptTitle = { fg = C.bg0, bg = C.bg_green },
-    TelescopeResultsTitle = { fg = C.bg0, bg = C.orange },
-    TelescopePreviewTitle = { fg = C.bg0, bg = C.orange },
+    TelescopePromptTitle = { fg = C.green },
+    TelescopeResultsTitle = { fg = C.orange },
+    TelescopePreviewTitle = { fg = C.orange },
 
     TelescopeResultsMethod = { link = "Function" },
     TelescopeResultsStruct = { link = "Structure" },
+
+    TelescopePreviewLine = { bg = C.bg4 },
   }
 end
 
