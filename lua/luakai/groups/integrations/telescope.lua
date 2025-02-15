@@ -2,12 +2,12 @@ local M = {}
 
 function M.get()
   return {
-    TelescopeNormal = { link = "NormalFloat" },
-    TelescopeBorder = { link = "FloatBorder" },
+    TelescopeNormal = { link = O.dim_inactive.enabled and "Normal" or "NormalFloat" },
+    TelescopeBorder = { link = O.dim_inactive.enabled and "Normal" or "FloatBorder" },
     TelescopeSelectionCaret = { fg = C.fg },
     TelescopeSelection = {
       fg = O.transparent_background and C.gray or C.fg,
-      bg = O.transparent_background and C.none or C.bg4,
+      bg = O.transparent_background and C.none or O.dim_inactive.enabled and C.bg1 or C.bg4,
       style = { "bold" },
     },
     TelescopeMatching = { fg = C.blue },
@@ -18,7 +18,7 @@ function M.get()
     TelescopeResultsMethod = { link = "Function" },
     TelescopeResultsStruct = { link = "Structure" },
 
-    TelescopePreviewLine = { bg = C.bg4 },
+    TelescopePreviewLine = { bg = O.dim_inactive.enabled and C.bg1 or C.bg4 },
   }
 end
 

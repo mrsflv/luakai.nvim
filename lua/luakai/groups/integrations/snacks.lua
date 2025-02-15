@@ -2,10 +2,10 @@ local M = {}
 
 function M.get()
   return {
-    SnacksNormal = { link = "NormalFloat" },
+    SnacksNormal = { link = O.dim_inactive.enabled and "Normal" or "NormalFloat" },
     SnacksWinBar = { link = "Title" },
     SnacksBackdrop = { fg = C.bg0 },
-    SnacksNormalNC = { link = "NormalFloat" },
+    SnacksNormalNC = { link = O.dim_inactive.enabled and "Normal" or "NormalFloat" },
     SnacksWinBarNC = { link = "SnacksWinBar" },
 
     SnacksNotifierInfo = { fg = C.green },
@@ -46,6 +46,9 @@ function M.get()
     SnacksDashboardSpecial = { link = "Special" },
     SnacksDashboardTitle = { link = "Title" },
 
+    SnacksPicker = { link = O.dim_inactive.enabled and "Normal" or "NormalFloat" },
+    SnacksPickerBorder = { link = O.dim_inactive.enabled and "Normal" or "FloatBorder" },
+    SnacksPickerTitle = { link = O.dim_inactive.enabled and "Title" or "FloatTitle" },
     SnacksPickerMatch = { fg = C.blue },
     SnacksPickerDir = { link = "Directory" },
     SnacksPickerTotals = { link = "Comment" },

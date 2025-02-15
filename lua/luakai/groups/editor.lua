@@ -40,7 +40,7 @@ function M.get()
     CursorLine = { bg = O.transparent_background and C.none or U.darken(C.bg1, 0.64, C.black) }, -- Screen-line at the cursor, when 'cursorline' is seC.  Low-priority if forecrust (ctermfg OR guifg) is not seC.
 
     LineNr = { fg = C.gray_dim, bg = C.none }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is seC.
-    CursorLineNr = { fg = C.fg, bg = C.none }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+    CursorLineNr = { fg = C.orange, bg = C.none, style = {"bold"} }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 
     VertSplit = {
       fg = O.transparent_background and C.bg4 or C.black,
