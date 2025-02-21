@@ -73,7 +73,7 @@ function M.get()
     }, -- Popup menu: normal item.
     PmenuSbar = { fg = C.none, bg = C.bg2 }, -- Popup menu: scrollbar.
     PmenuSel = { fg = C.bg0, bg = C.bg_blue, style = { "bold" } }, -- Popup menu: selected item.
-    PmenuThumb = { fg = C.gray, bg = C.bg2 }, -- Popup menu: Thumb of the scrollbar.
+    PmenuThumb = { fg = C.gray, bg = C.fg }, -- Popup menu: Thumb of the scrollbar.
 
     QuickFixLine = { fg = C.blue, bg = C.none, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
