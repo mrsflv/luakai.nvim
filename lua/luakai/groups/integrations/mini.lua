@@ -46,6 +46,16 @@ function M.get()
     MiniTestFail = { fg = C.red, style = { "bold" } },
     MiniTestPass = { fg = C.green, style = { "bold" } },
     MiniTrailspace = { fg = C.orange },
+
+    MiniIconsAzure = { fg = U.lighten(C.blue, 0.8, C.bg) },
+    MiniIconsBlue = { fg = C.blue },
+    MiniIconsCyan = { fg = U.darken(C.blue, 0.2, C.bg) },
+    MiniIconsGreen = { fg = C.green },
+    MiniIconsGrey = { fg = C.gray },
+    MiniIconsOrange = { fg = C.orange },
+    MiniIconsPurple = { fg = C.purple },
+    MiniIconsRed = { fg = C.red },
+    MiniIconsYellow = { fg = C.yellow },
   }
 end
 
