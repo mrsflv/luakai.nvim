@@ -75,7 +75,7 @@ function M.get()
     PmenuSel = { fg = C.bg0, bg = C.bg_blue, style = { "bold" } }, -- Popup menu: selected item.
     PmenuThumb = { fg = C.gray, bg = C.fg }, -- Popup menu: Thumb of the scrollbar.
 
-    QuickFixLine = { fg = C.blue, bg = C.none, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    QuickFixLine = { fg = C.fg, bg = C.none, style = { "bold" } }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 
     Search = { fg = C.bg0, bg = C.bg_green }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand ouC.
     CurSearch = { fg = C.bg0, bg = U.darken(C.bg_green, 0.70, C.bg0) }, -- 'cursearch' highlighting: highlights the current search you're on differently
