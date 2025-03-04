@@ -3,9 +3,9 @@ local M = {}
 function M.get()
   return {
     OilHidden = { fg = C.gray },
-    OilDir = { fg = C.green, style = { "bold" } },
+    OilDir = { link = "Directory", style = { "bold" } },
     OilDirHidden = { fg = C.gray },
-    OilDirIcon = { fg = C.green },
+    OilDirIcon = { link = "Directory" },
     OilSocket = { fg = C.orange },
     OilSocketHidden = { fg = C.gray },
     OilLink = { fg = C.blue, style = { "italic" } },
