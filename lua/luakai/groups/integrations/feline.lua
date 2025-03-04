@@ -1,7 +1,7 @@
 local M = {}
 
 local C = require("luakai.palettes").get_palette()
-local lsp = require "feline.providers.lsp"
+local lsp = require("feline.providers.lsp")
 
 local assets = {
   left_separator = "",
@@ -221,12 +221,12 @@ function M.get()
   -- file progess
   components.active[1][10] = {
     provider = function()
-      local current_line = vim.fn.line "."
-      local total_line = vim.fn.line "$"
+      local current_line = vim.fn.line(".")
+      local total_line = vim.fn.line("$")
 
       if current_line == 1 then
         return "Top"
-      elseif current_line == vim.fn.line "$" then
+      elseif current_line == vim.fn.line("$") then
         return "Bot"
       end
       local result, _ = math.modf((current_line / total_line) * 100)
@@ -258,7 +258,7 @@ function M.get()
   -- macro
   components.active[1][12] = {
     provider = "macro",
-    enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+    enabled = function() return vim.api.nvim_get_option("cmdheight") == 0 end,
     hl = {
       fg = sett.extras,
       bg = sett.bkg,
@@ -269,7 +269,7 @@ function M.get()
   -- search count
   components.active[1][13] = {
     provider = "search_count",
-    enabled = function() return vim.api.nvim_get_option "cmdheight" == 0 end,
+    enabled = function() return vim.api.nvim_get_option("cmdheight") == 0 end,
     hl = {
       fg = sett.extras,
       bg = sett.bkg,
@@ -396,8 +396,8 @@ function M.get()
 
   components.active[3][3] = {
     provider = function()
-      local filename = vim.fn.expand "%:t"
-      local extension = vim.fn.expand "%:e"
+      local filename = vim.fn.expand("%:t")
+      local extension = vim.fn.expand("%:e")
       local present, icons = pcall(require, "nvim-web-devicons")
       local icon = present and icons.get_icon(filename, extension) or assets.file
       return (sett.show_modified and "%m" or "") .. " " .. icon .. " " .. filename .. " "

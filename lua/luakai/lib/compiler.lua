@@ -65,7 +65,7 @@ vim.g.colors_name = "luakai"]],
 
   local f = loadstring(table.concat(lines, "\n"), "=")
   if not f then
-    local err_path = (path_sep == "/" and "/tmp" or os.getenv "TMP") .. "/luakai_error.lua"
+    local err_path = (path_sep == "/" and "/tmp" or os.getenv("TMP")) .. "/luakai_error.lua"
     print(string.format(
       [[Luakai (error): Most likely some mistake made in your luakai config
 You can open %s for debugging

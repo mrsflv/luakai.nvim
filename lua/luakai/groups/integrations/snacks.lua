@@ -59,7 +59,7 @@ function M.get()
     SnacksPickerPathIgnored = { link = "Comment" },
     SnacksPickerGitStatusIgnored = { link = "Comment" },
     SnacksPickerGitStatusUntracked = { link = "Comment" },
-		SnacksPickerSearch = {link = "Visual"},
+    SnacksPickerSearch = { link = "Visual" },
   }
 end
 

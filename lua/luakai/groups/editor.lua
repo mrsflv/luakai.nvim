@@ -40,7 +40,7 @@ function M.get()
     CursorLine = { bg = O.transparent_background and C.none or U.darken(C.bg1, 0.64, C.black) }, -- Screen-line at the cursor, when 'cursorline' is seC.  Low-priority if forecrust (ctermfg OR guifg) is not seC.
 
     LineNr = { fg = C.gray_dim, bg = C.none }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is seC.
-    CursorLineNr = { fg = C.orange, bg = C.none, style = {"bold"} }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
+    CursorLineNr = { fg = C.orange, bg = C.none, style = { "bold" } }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line. highlights the number in numberline.
 
     VertSplit = {
       fg = O.transparent_background and C.bg4 or C.black,
@@ -52,7 +52,11 @@ function M.get()
 
     NormalFloat = { fg = C.fg, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1 }, -- Normal text in floating windows.
     FloatBorder = { fg = C.gray, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1 },
-    FloatTitle = { fg = C.green, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1, style = {"bold"} }, -- Normal text in floating windows.
+    FloatTitle = {
+      fg = C.green,
+      bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1,
+      style = { "bold" },
+    }, -- Normal text in floating windows.
 
     Question = { fg = C.yellow, bg = C.none }, -- |hit-enter| prompt and yes/no questions
 
@@ -81,7 +85,7 @@ function M.get()
     CurSearch = { fg = C.bg0, bg = U.darken(C.bg_green, 0.70, C.bg0) }, -- 'cursearch' highlighting: highlights the current search you're on differently
     SpecialKey = { fg = C.bg4, bg = C.none }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' textspace. |hl-Whitespace|
 
-    Directory = { fg = C.green, bg = C.none }, -- directory names (and other special names in listings)
+    Directory = { fg = C.blue, bg = C.none }, -- directory names (and other special names in listings)
 
     ErrorMsg = { fg = C.red, style = { "bold", "italic" } }, -- error messages on the command line
     MatchParen = { fg = C.none, bg = C.bg4, style = { "bold" } }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|

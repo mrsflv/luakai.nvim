@@ -1,6 +1,6 @@
 local M = {}
 
-local hsluv = require "luakai.lib.hsluv"
+local hsluv = require("luakai.lib.hsluv")
 
 M.bg = "#000000"
 M.fg = "#ffffff"
@@ -163,7 +163,7 @@ function M.increase_saturation(hex, percentage)
     new_intensities[i] = math.floor(v * 255)
   end
   table.sort(new_intensities)
-  return (rgb2Hex { new_intensities.max, new_intensities.min, new_intensities.mid })
+  return (rgb2Hex({ new_intensities.max, new_intensities.min, new_intensities.mid }))
 end
 
 return M

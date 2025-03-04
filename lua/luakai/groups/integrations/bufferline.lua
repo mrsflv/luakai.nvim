@@ -1,5 +1,5 @@
 local M = {}
-local ctp = require "luakai"
+local ctp = require("luakai")
 local O = ctp.options
 
 function M.get(user_config)

@@ -160,10 +160,10 @@ end
 
 vim.api.nvim_create_user_command("LuakaiCompile", function()
   for name, _ in pairs(package.loaded) do
-    if name:match "^luakai" and name ~= "luakai" then package.loaded[name] = nil end
+    if name:match("^luakai") and name ~= "luakai" then package.loaded[name] = nil end
   end
   M.compile()
-  vim.api.nvim_command "colorscheme luakai-maia"
+  vim.api.nvim_command("colorscheme luakai-maia")
 end, {})
 
 return M

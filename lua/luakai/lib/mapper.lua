@@ -30,7 +30,7 @@ function M.apply(variant)
 
   _G.O = require("luakai").options
   _G.C = require("luakai.palettes").get_palette(variant)
-  _G.U = require "luakai.utils.colors"
+  _G.U = require("luakai.utils.colors")
 
   C.none = "NONE"
 
