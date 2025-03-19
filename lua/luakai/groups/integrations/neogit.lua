@@ -47,6 +47,12 @@ function M.get()
       bg = U.darken(C.green, 0.095, C.bg0),
       fg = U.darken(C.green, 0.800, C.bg0),
     },
+    NeogitDiffAddCursor = {
+      fg = U.darken(C.green, 0.800, C.bg0),
+    },
+    NeogitDiffAdditions = {
+      fg = C.green,
+    },
     NeogitCommitViewHeader = {
       bg = U.darken(C.blue, 0.300, C.bg0),
       fg = U.lighten(C.blue, 0.800, C.text),
@@ -68,7 +74,7 @@ function M.get()
       style = { "bold" },
     },
     NeogitChangeUpdated = {
-      fg = C.yellow,
+      fg = C.blue,
       style = { "bold" },
     },
     NeogitChangeCopied = {

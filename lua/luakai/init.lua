@@ -64,6 +64,7 @@ local M = {
       semantic_tokens = true,
       snacks = true,
       fzf = true,
+      neogit = true,
     },
     color_overrides = {},
     highlight_overrides = {},
