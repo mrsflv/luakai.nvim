@@ -47,7 +47,7 @@ function M.get()
       bg = O.transparent_background and C.bg_dim or C.none,
     }, -- the column separating vertically split windows
 
-    Substitute = { fg = C.bg0, bg = C.yellow }, -- |:substitute| replacement text highlighting
+    Substitute = { fg = C.bg0, bg = C.diff_yellow }, -- |:substitute| replacement text highlighting
     NonText = { fg = C.bg4, bg = C.none }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 
     NormalFloat = { fg = C.fg, bg = (O.transparent_background and vim.o.winblend == 0) and C.none or C.bg1 }, -- Normal text in floating windows.
