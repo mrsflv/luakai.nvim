@@ -28,7 +28,7 @@ local M = {
     },
     integrations = {
       cmp = true,
-      blink_cmp = true,
+      blink_cmp = false,
       mason = true,
       gitsigns = true,
       markdown = true,
@@ -37,15 +37,18 @@ local M = {
       telescope = true,
       treesitter = true,
       treesitter_context = true,
-      vim_bookmarks = true,
+      snacks = true,
+      fzf = true,
+      neogit = true,
       dap = {
         enabled = true,
         enabled_ui = true,
       },
       indent_blankline = {
-        enabled = true,
+        enabled = false,
         colored_indent_levels = false,
       },
+      semantic_tokens = true,
       native_lsp = {
         enabled = true,
         virtual_text = {
@@ -61,10 +64,6 @@ local M = {
           information = { "underline" },
         },
       },
-      semantic_tokens = true,
-      snacks = true,
-      fzf = true,
-      neogit = true,
     },
     color_overrides = {},
     highlight_overrides = {},
